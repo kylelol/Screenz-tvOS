@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="6185.10" systemVersion="14A360a" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="NO" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Screenz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-AZ-qNf">
+                                <rect key="frame" x="20" y="20" width="1880" height="1040"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="40" sectionFooterHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="EOc-bC-CeV">
+                                        <rect key="frame" x="0.0" y="0.0" width="752" height="1040"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" id="LdH-1O-9At" customClass="VideoTableViewCell" customModule="Screenz" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="54" width="752" height="66"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LdH-1O-9At" id="O5Z-g8-E2C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="752" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaM-FL-vEr">
+                                                            <rect key="frame" x="30" y="15" width="72" height="36"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstItem="LaM-FL-vEr" firstAttribute="centerY" secondItem="O5Z-g8-E2C" secondAttribute="centerY" id="Zb6-VF-dA1"/>
+                                                        <constraint firstItem="LaM-FL-vEr" firstAttribute="leading" secondItem="O5Z-g8-E2C" secondAttribute="leadingMargin" constant="22" id="vuq-1c-t3q"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <animations/>
+                                                <connections>
+                                                    <outlet property="videoTitleLabel" destination="LaM-FL-vEr" id="D9w-Ao-9ii"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="zf7-gi-Wie"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="bYu-Ol-QH9"/>
+                                        </connections>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-0w-FoI">
+                                        <rect key="frame" x="772" y="0.0" width="1108" height="1040"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="bZK-0w-FoI" secondAttribute="bottom" id="9Ns-y5-94E"/>
+                                    <constraint firstItem="EOc-bC-CeV" firstAttribute="leading" secondItem="w2B-AZ-qNf" secondAttribute="leading" id="AaA-9P-pxd"/>
+                                    <constraint firstItem="EOc-bC-CeV" firstAttribute="top" secondItem="w2B-AZ-qNf" secondAttribute="top" id="CWa-R3-gFN"/>
+                                    <constraint firstItem="bZK-0w-FoI" firstAttribute="leading" secondItem="EOc-bC-CeV" secondAttribute="trailing" constant="20" id="LKM-oe-3HX"/>
+                                    <constraint firstAttribute="bottom" secondItem="EOc-bC-CeV" secondAttribute="bottom" id="TV3-Ls-GY3"/>
+                                    <constraint firstItem="bZK-0w-FoI" firstAttribute="top" secondItem="w2B-AZ-qNf" secondAttribute="top" id="Vsm-Hn-atK"/>
+                                    <constraint firstAttribute="trailing" secondItem="bZK-0w-FoI" secondAttribute="trailing" id="lAg-hk-PgH"/>
+                                    <constraint firstItem="EOc-bC-CeV" firstAttribute="width" secondItem="w2B-AZ-qNf" secondAttribute="width" multiplier="0.4" id="xI2-Z2-cd8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w2B-AZ-qNf" secondAttribute="bottom" constant="20" id="27N-bA-6gh"/>
+                            <constraint firstItem="w2B-AZ-qNf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="4Tk-8t-lyN"/>
+                            <constraint firstAttribute="trailing" secondItem="w2B-AZ-qNf" secondAttribute="trailing" constant="20" id="goE-oN-RjS"/>
+                            <constraint firstItem="w2B-AZ-qNf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="zNc-L5-fWy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="EOc-bC-CeV" id="zNZ-xX-8R5"/>
+                        <outlet property="videoView" destination="bZK-0w-FoI" id="E1z-zp-ygs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
