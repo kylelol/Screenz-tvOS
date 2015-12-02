@@ -10,7 +10,18 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, IAPContainer, DataStoreOwner {
+    
+    var iapHelper : IAPHelper?
+    
+    var dataStore : DataStore? {
+        didSet {
+            if tableView != nil {
+                tableView.reloadData()
+            }
+        }
+    }
+
     
     var data: [JSON]?
     var playerViewController: AVPlayerViewController?
@@ -18,19 +29,26 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var screenInfoView: ScreenInfoView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         ApiService.sharedInstance.getPopularTVShows { (JSON, error) -> Void in
-            print("all done ")
             self.data = JSON.arrayValue
+            self.dataStore?.batchAddScreens(Screen.screensWithJsonData(JSON.arrayValue))
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
                 self.configureVideo(0)
             })
+            
         }
+        
+        iapHelper?.requestProducts({ (products) -> () in
+            print(products)
+            self.dataStore?.batchAddProducts(products)
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -76,24 +94,55 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let data = self.data {
-            return data.count
-        }
-        return 0
+        return self.dataStore!.numberOfRowsInSection(section)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("VideoCell")! as! VideoTableViewCell
-        
-        cell.videoTitleLabel.text = self.data![indexPath.row]["title"].stringValue
+       
+        var cell: UITableViewCell!
+        switch indexPath.section {
+        case 0: cell = self.configureVideoCellForTableView(tableView, atIndexPath: indexPath)
+        case 1: cell = self.configurePurchaseCellForTableView(tableView, atIndexPath: indexPath)
+        default: cell = UITableViewCell(style: .Default, reuseIdentifier: "defaultCell")
+        }
+
         
         return cell
     }
     
+    private func configureVideoCellForTableView(tableView: UITableView, atIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("VideoCell")! as! VideoTableViewCell
+        let video = self.dataStore!.objectForRowAtIndexPath(indexPath) as! Screen
+        cell.videoTitleLabel.text = video.title
+        
+        return cell
+        
+    }
+    
+    private func configurePurchaseCellForTableView(tableView: UITableView, atIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PurchaseCell")
+        
+        return cell!
+    }
+    
+    
+    
 }
 
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "My Screenz"
+        } else {
+            return "Available Screenz"
+        }
+    }
     
     func tableView(tableView: UITableView, canFocusRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         
@@ -104,7 +153,11 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didUpdateFocusInContext context: UITableViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
         
-        self.playerViewController?.player?.pause()
+        let object = self.dataStore?.objectForRowAtIndexPath(self.focusIndexPath!)
+        if object is Screen {
+            self.screenInfoView.screen = object as? Screen
+        }
+       /* self.playerViewController?.player?.pause()
         self.playerViewController?.view.removeFromSuperview()
         
         let player = AVPlayer(URL: NSURL(string: self.data![self.focusIndexPath!.row]["url"].stringValue)!)
@@ -114,7 +167,7 @@ extension ViewController: UITableViewDelegate {
         playerViewController!.player = player
         playerViewController!.view.frame = self.videoView.bounds
         self.videoView.addSubview(playerViewController!.view)
-        playerViewController!.player?.play()
+        playerViewController!.player?.play()*/
     }
     
     

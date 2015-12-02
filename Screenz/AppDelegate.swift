@@ -10,12 +10,26 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let iapHelper = IAPHelper(prodIds: Set(
+        ["com.Kirkland.Screenz.TestPurchase"]))
+    var dataStore: DataStore?
+
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var iapContainer = window?.rootViewController as? IAPContainer
+        iapContainer?.iapHelper = iapHelper
+        
+        dataStore = DataStore(plistURL: NSURL.urlForFileInDocumentsDirectory("screenz", fileExtension: "plist"))
+        var dsContainer = window?.rootViewController as? DataStoreOwner
+        dsContainer?.dataStore = dataStore
+        
+        
         return true
     }
 
