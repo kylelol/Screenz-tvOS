@@ -85,13 +85,17 @@ extension DataStore: TableViewFormatter {
     func numberOfRowsInSection(section: Int) -> Int {
         switch section {
         case 0: return self.screens.count
-        case 1: return 4
+        case 1: return self.products.count
         default: return 0
         }
     }
     
     func objectForRowAtIndexPath(indexPath: NSIndexPath) -> AnyObject? {
-        return self.screens[indexPath.row]
+        switch indexPath.section {
+        case 0: return self.screens[indexPath.row]
+        case 1: return self.products[indexPath.row]
+        default: return nil
+        }
     }
 }
 

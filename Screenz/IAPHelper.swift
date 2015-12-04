@@ -82,12 +82,13 @@ extension IAPHelper: SKPaymentTransactionObserver {
     }
     
     private func completeTransaction(transaction: SKPaymentTransaction) {
-        deliverPurchaseNotificatioForIdentifier(transaction.payment.productIdentifier)
+        print(transaction.transactionIdentifier!)
+        deliverPurchaseNotificatioForIdentifier(transaction)
         SKPaymentQueue.defaultQueue().finishTransaction(transaction)
     }
     
     private func restoreTranscation(transaction: SKPaymentTransaction) {
-        deliverPurchaseNotificatioForIdentifier(transaction.originalTransaction?.payment.productIdentifier)
+        deliverPurchaseNotificatioForIdentifier(transaction)
         SKPaymentQueue.defaultQueue().finishTransaction(transaction)
     }
     
@@ -98,12 +99,12 @@ extension IAPHelper: SKPaymentTransactionObserver {
         SKPaymentQueue.defaultQueue().finishTransaction(transaction)
     }
     
-    private func deliverPurchaseNotificatioForIdentifier(identifier: String?) {
+    private func deliverPurchaseNotificatioForIdentifier(identifier: SKPaymentTransaction?) {
         guard let identifier = identifier else { return }
         NSNotificationCenter.defaultCenter()
             .postNotificationName(self.dynamicType.IAPHelperPurchaseNotification, object: identifier)
     }
-}
+    }
 
 
 

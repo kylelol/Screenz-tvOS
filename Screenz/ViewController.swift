@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import StoreKit
 
 class ViewController: UIViewController, IAPContainer, DataStoreOwner {
     
@@ -45,10 +46,18 @@ class ViewController: UIViewController, IAPContainer, DataStoreOwner {
             
         }
         
+        ApiService.sharedInstance.testRequest()
+        
         iapHelper?.requestProducts({ (products) -> () in
-            print(products)
+            for product in products! {
+                print(product.localizedTitle)
+                
+            }
             self.dataStore?.batchAddProducts(products)
+            self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Automatic)
         })
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handlePurchaseNotification:", name: IAPHelper.IAPHelperPurchaseNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -88,6 +97,15 @@ class ViewController: UIViewController, IAPContainer, DataStoreOwner {
         let p = notification.object as! AVPlayerItem
         p.seekToTime(kCMTimeZero)
     }
+    
+    func handlePurchaseNotification(notification: NSNotification) {
+        if let purchase = notification.object as? SKPaymentTransaction {
+                //TOOD handle purchased
+                ApiService.sharedInstance.createPurchase(purchase)
+        }
+        
+        print("Made a purchase")
+    }
 
 
 }
@@ -125,9 +143,12 @@ extension ViewController: UITableViewDataSource {
     }
     
     private func configurePurchaseCellForTableView(tableView: UITableView, atIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PurchaseCell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("PurchaseCell") as! ProductTableViewCell
         
-        return cell!
+        let product = self.dataStore!.objectForRowAtIndexPath(indexPath) as! SKProduct
+        cell.product = product
+        
+        return cell
     }
     
     
@@ -156,26 +177,40 @@ extension ViewController: UITableViewDelegate {
         let object = self.dataStore?.objectForRowAtIndexPath(self.focusIndexPath!)
         if object is Screen {
             self.screenInfoView.screen = object as? Screen
+            let player = AVPlayer(URL: NSURL(string: (object as! Screen).url)!)
+            self.playerViewController?.player?.pause()
+            self.playerViewController?.view.removeFromSuperview()
+            player.actionAtItemEnd = AVPlayerActionAtItemEnd.None
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
+            playerViewController = AVPlayerViewController()
+            playerViewController!.player = player
+            playerViewController!.view.frame = self.videoView.bounds
+            self.videoView.addSubview(playerViewController!.view)
+            playerViewController!.player?.play()
         }
-       /* self.playerViewController?.player?.pause()
-        self.playerViewController?.view.removeFromSuperview()
-        
-        let player = AVPlayer(URL: NSURL(string: self.data![self.focusIndexPath!.row]["url"].stringValue)!)
-        player.actionAtItemEnd = AVPlayerActionAtItemEnd.None
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
-        playerViewController = AVPlayerViewController()
-        playerViewController!.player = player
-        playerViewController!.view.frame = self.videoView.bounds
-        self.videoView.addSubview(playerViewController!.view)
-        playerViewController!.player?.play()*/
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("selected row")
-        //if indexPath.row == 0 {
+        switch indexPath.section {
+        case 0: self.selectedVideoAtIndexPath(indexPath)
+        case 1: self.selectedPurchaseAtIndexPath(indexPath)
+        default: return
+        }
+    }
+    
+    func selectedPurchaseAtIndexPath(indexPath: NSIndexPath) {
+        let product = self.dataStore!.objectForRowAtIndexPath(indexPath) as! SKProduct
+        self.iapHelper?.buyProduct(product)
+
+    }
+    
+    func selectedVideoAtIndexPath(indexPath: NSIndexPath) {
+        
+        let video = self.dataStore!.objectForRowAtIndexPath(indexPath) as! Screen
         self.playerViewController?.player?.pause()
-        let player = AVPlayer(URL: NSURL(string: self.data![indexPath.row]["url"].stringValue)!)
+        let player = AVPlayer(URL: NSURL(string: video.url)!)
         player.actionAtItemEnd = AVPlayerActionAtItemEnd.None
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
         let  playerVC = AVPlayerViewController()
@@ -183,8 +218,6 @@ extension ViewController: UITableViewDelegate {
         print(self.videoView.bounds)
         playerVC.player!.play()
         self.presentViewController(playerVC, animated: true, completion: nil)
-            
-        //}
     }
 }
 

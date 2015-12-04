@@ -53,7 +53,7 @@
                                                     <outlet property="videoTitleLabel" destination="LaM-FL-vEr" id="D9w-Ao-9ii"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PurchaseCell" id="cjC-Bw-5au" customClass="VideoTableViewCell" customModule="Screenz" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PurchaseCell" id="cjC-Bw-5au" customClass="ProductTableViewCell" customModule="Screenz" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="134" width="930" height="66"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cjC-Bw-5au" id="Avk-zZ-h8Y">
@@ -86,7 +86,8 @@
                                                 </tableViewCellContentView>
                                                 <animations/>
                                                 <connections>
-                                                    <outlet property="videoTitleLabel" destination="2ht-Dw-liv" id="rWC-HJ-kHc"/>
+                                                    <outlet property="nameLabel" destination="2ht-Dw-liv" id="3F5-B5-J8N"/>
+                                                    <outlet property="priceLabel" destination="6yy-bG-RtY" id="Zcc-aY-7iO"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
