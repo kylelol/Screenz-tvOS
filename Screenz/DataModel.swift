@@ -29,3 +29,8 @@ protocol TableViewFormatter {
     func objectForRowAtIndexPath(indexPath: NSIndexPath) -> AnyObject?
     
 }
+
+protocol CollectionViewFormatter {
+    func cv_numberOfRowsInSection(section: Int) -> Int
+    func cv_objectForRowAtIndexPath(indexPath: NSIndexPath) -> AnyObject?
+}

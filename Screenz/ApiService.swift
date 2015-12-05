@@ -61,11 +61,52 @@ class ApiService {
         }
     }
     
+    private func downloadAndStoreMp4Locally(urls: [String], onCompletion: ([String], NSError?) -> ()) {
+        
+        let group = dispatch_group_create()
+        var localPaths = [String]()
+        for url in urls {
+            dispatch_group_enter(group)
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { () -> Void in
+               print("Starting download for \(url)")
+                if let data = NSData(contentsOfURL: NSURL(string: url)!) {
+                    let documentsDir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+                    let pathComps = url.componentsSeparatedByString("/")
+                    let fileName = pathComps[pathComps.count - 1]
+                    let filePath = "\(documentsDir)/\(fileName)"
+                    print("About to write file to: \(filePath)")
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        localPaths.append(filePath)
+                        data.writeToFile(filePath, atomically: true)
+                        print("File Saved")
+                        dispatch_group_leave(group)
+                    }
+                    
+                }
+                
+            }
+        }
+        
+        dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            print("All done downoading videos")
+            onCompletion(localPaths, nil)
+        }
+    }
+    
     
     func getPopularTVShows(onCompletion: (JSON, NSError?) -> Void) {
         apiGetRequest(baseUrl + "/videos.json", onCompletion: { json, err in
             print(json)
+            var urls = [String]()
+            for screen in json.arrayValue {
+                urls.append(screen["url"].stringValue)
+            }
+            
+          //  self.downloadAndStoreMp4Locally(urls, onCompletion: { (localPaths, error) -> () in
+          //  })
             onCompletion(json as JSON, err as NSError?)
+
         })
     }
 }

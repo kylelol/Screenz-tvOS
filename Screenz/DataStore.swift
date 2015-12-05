@@ -99,6 +99,25 @@ extension DataStore: TableViewFormatter {
     }
 }
 
+//MARK: Screen CollectionView Helpers 
+extension DataStore: CollectionViewFormatter {
+    
+    func cv_numberOfRowsInSection(section: Int) -> Int {
+        return self.screens.count + self.products.count
+    }
+    
+    func cv_objectForRowAtIndexPath(indexPath: NSIndexPath) -> AnyObject? {
+        
+        if indexPath.row < self.screens.count {
+            return self.screens[indexPath.row]
+        }
+        
+        return nil
+    }
+
+    
+}
+
 //MARK:- Products Management
 
 extension DataStore {
