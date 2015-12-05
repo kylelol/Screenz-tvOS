@@ -14,7 +14,7 @@ class ApiService {
     private var dev = true
     
    // private let baseUrl = "http://screenz.herokuapp.com"
-    private let baseUrl = "http://localhost:3000"
+    private let baseUrl = "http://192.168.0.15:3000"
     
     static let sharedInstance = ApiService()
     
@@ -24,7 +24,12 @@ class ApiService {
         let session = NSURLSession.sharedSession()
         
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            let json:JSON = JSON(data: data!)
+            
+            guard let data = data else {
+                print(error)
+                return
+            }
+            let json:JSON = JSON(data: data)
             onCompletion(json, error)
         })
         task.resume()
@@ -49,7 +54,7 @@ class ApiService {
 
     func createPurchase(transaction: SKPaymentTransaction, onCompletion: (NSError?) -> ()) {
         
-        let params: [String: AnyObject] = ["transaction_id":transaction.transactionIdentifier!, "product_id": transaction.payment.productIdentifier]
+        let params: [String: AnyObject] = ["transaction_id": transaction.transactionState == .Restored ? transaction.originalTransaction!.transactionIdentifier! : transaction.transactionIdentifier!, "product_id": transaction.payment.productIdentifier]
         
         apiPostRequest(baseUrl + "/payments.json", parameters: params) { (error) -> () in
             onCompletion(error)

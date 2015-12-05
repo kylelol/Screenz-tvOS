@@ -16,7 +16,7 @@ class ProductTableViewCell: UITableViewCell {
     
     var product: SKProduct? {
         didSet {
-            self.nameLabel?.text = product?.description
+            self.nameLabel?.text = product?.localizedTitle
             self.priceLabel?.text = "\(product?.price)"
         }
     }

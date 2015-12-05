@@ -46,8 +46,6 @@ class ViewController: UIViewController, IAPContainer, DataStoreOwner {
             
         }
         
-        ApiService.sharedInstance.testRequest()
-        
         iapHelper?.requestProducts({ (products) -> () in
             for product in products! {
                 print(product.localizedTitle)
@@ -99,12 +97,18 @@ class ViewController: UIViewController, IAPContainer, DataStoreOwner {
     }
     
     func handlePurchaseNotification(notification: NSNotification) {
+        print("handle Purchase")
         if let purchase = notification.object as? SKPaymentTransaction {
                 //TOOD handle purchased
-                ApiService.sharedInstance.createPurchase(purchase)
+            ApiService.sharedInstance.createPurchase(purchase) { error in
+                
+                if let err = error {
+                    print("Error from the server: \(error)")
+                } else {
+                    
+                }
+            }
         }
-        
-        print("Made a purchase")
     }
 
 
