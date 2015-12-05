@@ -13,12 +13,14 @@ final class Screen {
     let url: String
     let title: String
     let description: String
+    let productId: String?
     
-    init(id: Int, url: String, title: String, description: String) {
+    init(id: Int, url: String, title: String, description: String, productId: String?) {
         self.id = id
         self.url = url
         self.title = title
         self.description = description
+        self.productId = productId
     }
 }
 
@@ -35,7 +37,13 @@ extension Screen {
                 return nil
             }
             
-            screens.append(Screen(id: id, url: url, title: title, description: desc))
+            var productId: String?
+            if let product = json["sk_product"].dictionaryObject {
+                print("\(product["product_id"])")
+                productId = product["product_id"]! as! String
+            }
+            
+            screens.append(Screen(id: id, url: url, title: title, description: desc, productId: productId))
             
         }
         return screens 
@@ -50,7 +58,8 @@ extension Screen : Serializable {
             let desc = dict["descriptionKey"] as? String else {
                 return nil
         }
-        self.init(id: id, url: url, title: title, description: desc)
+        
+        self.init(id: id, url: url, title: title, description: desc, productId: dict["productIdKey"] as! String)
     }
     
     var dictRepresentation : [String : AnyObject] {
@@ -58,7 +67,8 @@ extension Screen : Serializable {
             "idKey"            : id,
             "urlKey"          : url,
             "titleKey"         : title,
-            "descriptionKey"   : description
+            "descriptionKey"   : description,
+            "productIdKey"     : productId != nil ? productId! : ""
         ]
     }
 }

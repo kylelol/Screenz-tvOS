@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import StoreKit
 
 class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
     
@@ -165,6 +166,10 @@ extension ScreenzViewController: ScreenInfoViewDelegate {
         self.swapBgVideoWithScreen(infoView.screen)
     }
     
+    func priceForButton(productId: String) -> SKProduct? {
+        return self.dataStore?.productForProductId(productId)
+    }
+    
 }
 
 extension ScreenzViewController {
@@ -210,8 +215,7 @@ extension ScreenzViewController: UICollectionViewDataSource {
         guard let ds = self.dataStore else {
             return 0
         }
-        
-        
+    
         print(ds.cv_numberOfRowsInSection(section))
             
         return ds.cv_numberOfRowsInSection(section)
@@ -232,6 +236,12 @@ extension ScreenzViewController: UICollectionViewDelegate {
             self.screenInfoView?.screen = self.dataStore?.cv_objectForRowAtIndexPath(path) as? Screen
         }
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.playObject = self.dataStore?.cv_objectForRowAtIndexPath(indexPath) as? Screen
+        self.performSegueWithIdentifier("ScreenPlayerSegue", sender: nil)
+    }
+    
     
 }
 

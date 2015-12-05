@@ -13,6 +13,7 @@ import StoreKit
     optional func didTapBuyButton(infoView: ScreenInfoView)
     optional func didTapPreviewButton(infoView: ScreenInfoView)
     optional func didTapPlayButton(infoView: ScreenInfoView)
+    optional func priceForButton(productId: String) -> SKProduct?
 }
 
 class ScreenInfoView: UIView {
@@ -31,6 +32,20 @@ class ScreenInfoView: UIView {
             if let screen = screen {
                 titleLabel?.text = screen.title
                 descriptionLabel?.text = screen.description
+                
+                if let productId = screen.productId {
+                    print("We have product id \(productId)")
+                    if let product = self.delegate?.priceForButton?(productId) {
+                        self.buyButton?.userInteractionEnabled = true
+                        self.buyButton!.setTitle("\(product.price)", forState: .Normal)
+
+                    }
+                    
+                } else {
+                    self.buyButton?.userInteractionEnabled = false
+                    self.buyButton?.setTitle("Free", forState: .Normal)
+
+                }
             }
         }
     }

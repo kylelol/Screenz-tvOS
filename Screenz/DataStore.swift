@@ -129,6 +129,22 @@ extension DataStore {
 
         self.products.appendContentsOf(array)
     }
+    
+    func productForProductId(pId: String?) -> SKProduct? {
+        
+       let index =  self.products.indexOf { (product) -> Bool in
+            return product.productIdentifier == pId
+        }
+        
+        if index != nil {
+            let product = self.products[index!]
+            return product
+
+        } else {
+            return nil
+        }
+        
+    }
 }
 
 //Screen Management
