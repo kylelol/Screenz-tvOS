@@ -10,17 +10,37 @@ import UIKit
 import AVKit
 
 class ScreenzPlayerViewController: AVPlayerViewController {
+    
+    var secondPlayer: AVPlayerItem?
+    var firstPlayer: AVPlayerItem?
+    var videoURL: NSURL!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.player?.actionAtItemEnd = .None
+        self.secondPlayer = AVPlayerItem(URL: videoURL)
+        self.firstPlayer = AVPlayerItem(URL: videoURL)
+   
+        weak var w = self
+        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: nil, queue: nil) { (notification) -> Void in
+            let queuePlayer = w!.self.player! as! AVQueuePlayer
+            if(queuePlayer.currentItem == self.firstPlayer!) {
+                queuePlayer.insertItem(self.secondPlayer!, afterItem: nil)
+                self.firstPlayer!.seekToTime(kCMTimeZero)
+            } else {
+                queuePlayer.insertItem(self.firstPlayer!, afterItem: nil)
+                self.secondPlayer!.seekToTime(kCMTimeZero)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

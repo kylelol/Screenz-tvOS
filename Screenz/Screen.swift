@@ -59,7 +59,7 @@ extension Screen : Serializable {
                 return nil
         }
         
-        self.init(id: id, url: url, title: title, description: desc, productId: dict["productIdKey"] as! String)
+        self.init(id: id, url: url, title: title, description: desc, productId: dict["productIdKey"] as? String)
     }
     
     var dictRepresentation : [String : AnyObject] {

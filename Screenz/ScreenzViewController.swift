@@ -23,9 +23,11 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         }
     }
     
+    @IBOutlet weak var emptySpaceView: UIView!
     var focusedIndexPath: NSIndexPath?
     var playObject: Screen?
     var playerViewController: AVPlayerViewController?
+    var focusGuide: UIFocusGuide!
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -55,7 +57,17 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
             self.collectionView.reloadData()
         })
         
+        self.focusGuide = UIFocusGuide()
+        view.addLayoutGuide(self.focusGuide)
+        self.focusGuide.topAnchor.constraintEqualToAnchor(self.emptySpaceView.topAnchor).active = true
+        self.focusGuide.leftAnchor.constraintEqualToAnchor(self.emptySpaceView.leftAnchor).active = true
+        self.focusGuide.widthAnchor.constraintEqualToAnchor(self.emptySpaceView.widthAnchor).active = true
+        self.focusGuide.heightAnchor.constraintEqualToAnchor(self.emptySpaceView.heightAnchor).active = true
+        
         self.screenInfoView?.delegate = self
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handlePurchaseNotification:", name: IAPHelper.IAPHelperPurchaseNotification, object: nil)
     }
     
     func startBgVideo() {
@@ -65,10 +77,6 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
             if object is Screen {
                 self.screenInfoView!.screen = object as? Screen
                 let player = AVPlayer(URL: NSURL(string: (object as! Screen).url)!)
-             //   self.playerViewController?.player?.pause()
-               // self.playerViewController?.view.removeFromSuperview()
-                //player.actionAtItemEnd = AVPlayerActionAtItemEnd.None
-                //NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: player.currentItem)
                 self.playerViewController = AVPlayerViewController()
                 self.playerViewController!.player = player
                 self.playerViewController!.showsPlaybackControls = false
@@ -77,7 +85,7 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
                     self.view.addSubview(self.playerViewController!.view)
                     self.view.sendSubviewToBack(self.playerViewController!.view)
                     self.playerViewController!.view.userInteractionEnabled = false
-                   self.playerViewController!.player?.play()
+                    self.playerViewController!.player?.play()
                 })
             }
         }
@@ -127,6 +135,22 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         self.collectionView.delegate = self
     }
     
+    override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
+        
+        super.didUpdateFocusInContext(context, withAnimationCoordinator: coordinator)
+        
+        guard let nextFocusedView = context.nextFocusedView else {return }
+        
+        if nextFocusedView == self.emptySpaceView {
+            print("updating focus")
+            print(context.nextFocusedView)
+            focusGuide.preferredFocusedView = self.screenInfoView?.previewButton
+        } else {
+            //focusGuide.preferredFocusedView = nil
+            print(nextFocusedView.description)
+        }
+    }
+    
 
     
     // MARK: - Navigation
@@ -137,12 +161,28 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "ScreenPlayerSegue" {
-            let player =
             print("\(playObject!.url)")
-            (segue.destinationViewController as! AVPlayerViewController).player = AVPlayer(URL: NSURL(string: playObject!.url)!)
-                        (segue.destinationViewController as! AVPlayerViewController).player?.play()
+            let player = AVPlayer(URL: NSURL(string: playObject!.url)!)
+            (segue.destinationViewController as! ScreenzPlayerViewController).player = player
+            (segue.destinationViewController as! ScreenzPlayerViewController).videoURL =  NSURL(string: playObject!.url)!
+
+            (segue.destinationViewController as! AVPlayerViewController).player?.play()
 
         }
+    }
+    
+    func handlePurchaseNotification(notification: NSNotification) {
+        if let transaction = notification.object as? SKPaymentTransaction
+            where transaction.payment.productIdentifier == VibesPurchase.TestPurchase.productId {
+                print(transaction.payment.productIdentifier)
+
+                print("Time to give them there purchase")
+                
+                //TODO: Receipt validation and serving the content.
+                
+        } else if let productId = notification.object as? String {
+        }
+        
     }
     
 
@@ -152,12 +192,21 @@ extension ScreenzViewController: ScreenInfoViewDelegate {
     
     func didTapBuyButton(infoView: ScreenInfoView) {
         
+        if let ds = self.dataStore {
+            
+            print(self.focusedIndexPath?.row)
+            if let product = ds.productForProductId((ds.cv_objectForRowAtIndexPath(self.focusedIndexPath!) as! Screen).productId!) {
+                print(product)
+                self.iapHelper?.buyProduct(product)
+            }
+        }
+        
     }
     
     func didTapPlayButton(infoView: ScreenInfoView) {
         
         self.playObject = infoView.screen
-    self.performSegueWithIdentifier("ScreenPlayerSegue", sender: nil)
+        self.performSegueWithIdentifier("ScreenPlayerSegue", sender: nil)
         
     }
     
@@ -173,6 +222,7 @@ extension ScreenzViewController: ScreenInfoViewDelegate {
 }
 
 extension ScreenzViewController {
+    
     func generateThumbnail(url: NSURL) -> UIImage? {
         
         var asset: AVAsset = AVAsset(URL: url)
@@ -188,7 +238,7 @@ extension ScreenzViewController {
             
             
         } catch {
-            print("Somethign went wrong generating a thumbnail")
+            print("Something went wrong generating a thumbnail")
         }
         
         return image
@@ -227,14 +277,17 @@ extension ScreenzViewController: UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, canFocusItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         
-        self.focusedIndexPath = indexPath
+        print("Stil updating focus \(indexPath)")
+       // self.focusedIndexPath = indexPath
         return true
     }
     
     func collectionView(collectionView: UICollectionView, didUpdateFocusInContext context: UICollectionViewFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
-        if let path = self.focusedIndexPath {
-            self.screenInfoView?.screen = self.dataStore?.cv_objectForRowAtIndexPath(path) as? Screen
+            print("We updating path now")
+        if let path = context.nextFocusedIndexPath {
+            self.focusedIndexPath = path
         }
+        self.screenInfoView?.screen = self.dataStore?.cv_objectForRowAtIndexPath(self.focusedIndexPath!) as? Screen
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

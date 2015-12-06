@@ -18,6 +18,7 @@
 		27B96F591C13657500DCA723 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B96F581C13657500DCA723 /* AVKit.framework */; };
 		27B96F5B1C13663C00DCA723 /* ScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B96F5A1C13663C00DCA723 /* ScreenCollectionViewCell.swift */; };
 		27B96F5D1C138EA900DCA723 /* ScreenzPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B96F5C1C138EA900DCA723 /* ScreenzPlayerViewController.swift */; };
+		27B96F5F1C13DB5E00DCA723 /* VibesPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B96F5E1C13DB5E00DCA723 /* VibesPurchase.swift */; };
 		27BF9ABF1C0D45CD00D04D6B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BF9ABE1C0D45CD00D04D6B /* StoreKit.framework */; };
 		27BF9AC11C0E52B400D04D6B /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BF9AC01C0E52B400D04D6B /* IAPHelper.swift */; };
 		27D1A4871C0EA8CA00C400F6 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1A4861C0EA8CA00C400F6 /* ProductTableViewCell.swift */; };
@@ -60,6 +61,7 @@
 		27B96F581C13657500DCA723 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		27B96F5A1C13663C00DCA723 /* ScreenCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		27B96F5C1C138EA900DCA723 /* ScreenzPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenzPlayerViewController.swift; sourceTree = "<group>"; };
+		27B96F5E1C13DB5E00DCA723 /* VibesPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibesPurchase.swift; sourceTree = "<group>"; };
 		27BF9ABE1C0D45CD00D04D6B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		27BF9AC01C0E52B400D04D6B /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		27D1A4861C0EA8CA00C400F6 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				275990AD1C0E90040093B01D /* DataStore.swift */,
 				275990AF1C0E91460093B01D /* DataStoreUtils.swift */,
 				27BF9AC01C0E52B400D04D6B /* IAPHelper.swift */,
+				27B96F5E1C13DB5E00DCA723 /* VibesPurchase.swift */,
 			);
 			name = "Data Layer";
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				275990AA1C0E8E050093B01D /* Screen.swift in Sources */,
 				27F4EE161BFAC6BB006D34C2 /* ViewController.swift in Sources */,
+				27B96F5F1C13DB5E00DCA723 /* VibesPurchase.swift in Sources */,
 				27F4EE141BFAC6BB006D34C2 /* AppDelegate.swift in Sources */,
 				27F4EE3F1BFAC7B4006D34C2 /* ApiService.swift in Sources */,
 				27F4EE411BFAC83C006D34C2 /* SwiftyJSON.swift in Sources */,

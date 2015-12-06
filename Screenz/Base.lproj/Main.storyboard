@@ -213,6 +213,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phx-kr-TKI" userLabel="Screen Content View" customClass="ScreenInfoView" customModule="Screenz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="1780" height="658"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTt-pJ-2Ct">
+                                                <rect key="frame" x="887" y="0.0" width="893" height="658"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Christmas Screensavers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRc-be-keY">
                                                 <rect key="frame" x="107" y="94" width="433" height="55"/>
                                                 <animations/>
@@ -236,10 +241,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="700" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="vKU-HC-WzF" userLabel="Action Views">
-                                                <rect key="frame" x="107" y="434" width="720" height="224"/>
+                                                <rect key="frame" x="107" y="434" width="780" height="224"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-xU-N1b">
-                                                        <rect key="frame" x="0.0" y="69" width="220" height="86"/>
+                                                        <rect key="frame" x="30" y="69" width="220" height="86"/>
                                                         <animations/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="220" id="BWL-ou-eSJ"/>
@@ -252,7 +257,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hM1-bj-Q9c">
-                                                        <rect key="frame" x="250" y="69" width="220" height="86"/>
+                                                        <rect key="frame" x="280" y="69" width="220" height="86"/>
                                                         <animations/>
                                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                                         <state key="normal" title="Preview"/>
@@ -261,7 +266,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyZ-bH-Z2o">
-                                                        <rect key="frame" x="500" y="69" width="220" height="86"/>
+                                                        <rect key="frame" x="530" y="69" width="220" height="86"/>
                                                         <animations/>
                                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                                         <state key="normal" title="Play"/>
@@ -273,9 +278,9 @@
                                                 <animations/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="pcQ-xU-N1b" firstAttribute="leading" secondItem="vKU-HC-WzF" secondAttribute="leading" id="2Y0-1o-xMy"/>
+                                                    <constraint firstItem="pcQ-xU-N1b" firstAttribute="leading" secondItem="vKU-HC-WzF" secondAttribute="leading" constant="30" id="2Y0-1o-xMy"/>
                                                     <constraint firstItem="XyZ-bH-Z2o" firstAttribute="leading" secondItem="hM1-bj-Q9c" secondAttribute="trailing" constant="30" id="5Ad-bW-OE6"/>
-                                                    <constraint firstAttribute="trailing" secondItem="XyZ-bH-Z2o" secondAttribute="trailing" priority="999" id="DUG-ev-L2y"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XyZ-bH-Z2o" secondAttribute="trailing" priority="999" constant="30" id="DUG-ev-L2y"/>
                                                     <constraint firstItem="XyZ-bH-Z2o" firstAttribute="width" secondItem="hM1-bj-Q9c" secondAttribute="width" id="DcP-2I-q38"/>
                                                     <constraint firstItem="hM1-bj-Q9c" firstAttribute="height" secondItem="pcQ-xU-N1b" secondAttribute="height" id="Fly-QA-LN3"/>
                                                     <constraint firstItem="XyZ-bH-Z2o" firstAttribute="centerY" secondItem="hM1-bj-Q9c" secondAttribute="centerY" id="ItU-MV-3NC"/>
@@ -289,14 +294,18 @@
                                         </subviews>
                                         <animations/>
                                         <constraints>
+                                            <constraint firstItem="aTt-pJ-2Ct" firstAttribute="top" secondItem="Phx-kr-TKI" secondAttribute="top" id="2IS-rt-G76"/>
                                             <constraint firstItem="8Uq-FV-RpT" firstAttribute="leading" secondItem="Bcd-Op-XIh" secondAttribute="leading" id="ADK-Ks-FTx"/>
                                             <constraint firstItem="gRc-be-keY" firstAttribute="leading" secondItem="Phx-kr-TKI" secondAttribute="trailing" multiplier="0.06" id="Fpi-26-ldd"/>
                                             <constraint firstAttribute="bottom" secondItem="vKU-HC-WzF" secondAttribute="bottom" id="ORo-iE-Wii"/>
                                             <constraint firstItem="Bcd-Op-XIh" firstAttribute="top" secondItem="gRc-be-keY" secondAttribute="bottom" constant="50" id="Tu5-me-kew"/>
                                             <constraint firstItem="gRc-be-keY" firstAttribute="top" secondItem="Phx-kr-TKI" secondAttribute="bottom" multiplier="0.143" id="YYL-Ja-h7h"/>
+                                            <constraint firstAttribute="trailing" secondItem="aTt-pJ-2Ct" secondAttribute="trailing" id="bYs-2m-rZ4"/>
+                                            <constraint firstItem="aTt-pJ-2Ct" firstAttribute="leading" secondItem="vKU-HC-WzF" secondAttribute="trailing" id="ify-WF-5OB"/>
                                             <constraint firstItem="vKU-HC-WzF" firstAttribute="top" secondItem="8Uq-FV-RpT" secondAttribute="bottom" id="jf9-rT-eHZ"/>
                                             <constraint firstItem="8Uq-FV-RpT" firstAttribute="top" secondItem="Bcd-Op-XIh" secondAttribute="bottom" constant="50" id="kNr-ir-Esv"/>
                                             <constraint firstItem="vKU-HC-WzF" firstAttribute="leading" secondItem="8Uq-FV-RpT" secondAttribute="leading" id="krD-M0-zIP"/>
+                                            <constraint firstAttribute="bottom" secondItem="aTt-pJ-2Ct" secondAttribute="bottom" id="sVM-zX-SFk"/>
                                             <constraint firstItem="Bcd-Op-XIh" firstAttribute="leading" secondItem="gRc-be-keY" secondAttribute="leading" id="urQ-yf-bzF"/>
                                             <constraint firstItem="8Uq-FV-RpT" firstAttribute="trailing" secondItem="Phx-kr-TKI" secondAttribute="trailing" multiplier="0.5" id="v9G-tG-Fm1"/>
                                         </constraints>
@@ -414,6 +423,7 @@
                     <connections>
                         <outlet property="bgImageView" destination="o6F-8H-IO6" id="TGo-n0-7Va"/>
                         <outlet property="collectionView" destination="YHs-Ln-qnM" id="tRv-3U-vvk"/>
+                        <outlet property="emptySpaceView" destination="aTt-pJ-2Ct" id="xbl-MD-9za"/>
                         <outlet property="screenInfoView" destination="Phx-kr-TKI" id="BoK-Ja-XmX"/>
                         <segue destination="83d-60-A9e" kind="presentation" identifier="ScreenPlayerSegue" id="yEE-Rs-7rw"/>
                     </connections>
@@ -425,7 +435,7 @@
         <!--AV Player View Controller-->
         <scene sceneID="XJx-vS-uU8">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="83d-60-A9e" sceneMemberID="viewController"/>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="83d-60-A9e" customClass="ScreenzPlayerViewController" customModule="Screenz" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMb-kD-NHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-608" y="2169"/>

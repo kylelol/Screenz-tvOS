@@ -101,6 +101,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
     
     private func deliverPurchaseNotificatioForIdentifier(identifier: SKPaymentTransaction?) {
         guard let identifier = identifier else { return }
+        
         NSNotificationCenter.defaultCenter()
             .postNotificationName(self.dynamicType.IAPHelperPurchaseNotification, object: identifier)
     }

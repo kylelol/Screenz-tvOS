@@ -37,13 +37,14 @@ class ScreenInfoView: UIView {
                     print("We have product id \(productId)")
                     if let product = self.delegate?.priceForButton?(productId) {
                         self.buyButton?.userInteractionEnabled = true
-                        self.buyButton!.setTitle("\(product.price)", forState: .Normal)
-
+                        self.buyButton!.setTitle("$\(product.price)", forState: .Normal)
+                        self.playButton!.userInteractionEnabled = false
                     }
                     
                 } else {
                     self.buyButton?.userInteractionEnabled = false
                     self.buyButton?.setTitle("Free", forState: .Normal)
+                    self.playButton!.userInteractionEnabled = true
 
                 }
             }
@@ -54,6 +55,15 @@ class ScreenInfoView: UIView {
         didSet {
             
         }
+    }
+    
+    override weak var preferredFocusedView: UIView? {
+        return self.playButton
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
     }
     
     @IBAction func didTapBuyButton(sender: AnyObject) {
