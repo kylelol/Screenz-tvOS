@@ -8,11 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		27046A0B1BFAD27200BD2D2E /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27046A0A1BFAD27200BD2D2E /* VideoTableViewCell.swift */; };
+		272214981C17916900FD387E /* logs2-closeup--web.mov in Resources */ = {isa = PBXBuildFile; fileRef = 272214971C17916900FD387E /* logs2-closeup--web.mov */; };
 		275990AA1C0E8E050093B01D /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990A91C0E8E050093B01D /* Screen.swift */; };
 		275990AC1C0E8E280093B01D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990AB1C0E8E280093B01D /* DataModel.swift */; };
 		275990AE1C0E90040093B01D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990AD1C0E90040093B01D /* DataStore.swift */; };
 		275990B01C0E91460093B01D /* DataStoreUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990AF1C0E91460093B01D /* DataStoreUtils.swift */; };
 		275990B21C0E9D7E0093B01D /* ScreenInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990B11C0E9D7E0093B01D /* ScreenInfoView.swift */; };
+		2766050C1C179531004E70B8 /* myfire-1min-5600k.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2766050B1C179531004E70B8 /* myfire-1min-5600k.mov */; };
+		2766050E1C17AF90004E70B8 /* toy2-1080-web.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2766050D1C17AF90004E70B8 /* toy2-1080-web.mov */; };
+		276605101C17B675004E70B8 /* istockphoto-bells-web.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2766050F1C17B675004E70B8 /* istockphoto-bells-web.mov */; };
+		276605121C17B6C5004E70B8 /* istockphoto-winter-web.mov in Resources */ = {isa = PBXBuildFile; fileRef = 276605111C17B6C5004E70B8 /* istockphoto-winter-web.mov */; };
+		2766051A1C17CCDD004E70B8 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276605191C17CCDD004E70B8 /* TVServices.framework */; };
+		2766051D1C17CCDE004E70B8 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766051C1C17CCDE004E70B8 /* ServiceProvider.swift */; };
+		276605211C17CCDE004E70B8 /* ScreenzTopShelf.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 276605171C17CCDD004E70B8 /* ScreenzTopShelf.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		276605281C17D716004E70B8 /* logs_closeup-web.mov in Resources */ = {isa = PBXBuildFile; fileRef = 276605271C17D716004E70B8 /* logs_closeup-web.mov */; };
+		2766052A1C17D725004E70B8 /* fire_wide-1min-8000k.mov in Resources */ = {isa = PBXBuildFile; fileRef = 276605291C17D725004E70B8 /* fire_wide-1min-8000k.mov */; };
+		2766052B1C17D928004E70B8 /* fire_wide-1min-8000k.mov in Resources */ = {isa = PBXBuildFile; fileRef = 276605291C17D725004E70B8 /* fire_wide-1min-8000k.mov */; };
+		2766052D1C17DAAC004E70B8 /* fire-wide.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2766052C1C17DAAC004E70B8 /* fire-wide.jpg */; };
 		27B96F551C13568400DCA723 /* ScreenzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B96F541C13568400DCA723 /* ScreenzViewController.swift */; };
 		27B96F571C13657100DCA723 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B96F561C13657100DCA723 /* AVFoundation.framework */; };
 		27B96F591C13657500DCA723 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B96F581C13657500DCA723 /* AVKit.framework */; };
@@ -21,6 +33,17 @@
 		27B96F5F1C13DB5E00DCA723 /* VibesPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B96F5E1C13DB5E00DCA723 /* VibesPurchase.swift */; };
 		27BF9ABF1C0D45CD00D04D6B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BF9ABE1C0D45CD00D04D6B /* StoreKit.framework */; };
 		27BF9AC11C0E52B400D04D6B /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BF9AC01C0E52B400D04D6B /* IAPHelper.swift */; };
+		27C6583B1C163981006C0866 /* screenz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27C6583A1C163981006C0866 /* screenz.plist */; };
+		27C658461C166A3C006C0866 /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C6583D1C166A3C006C0866 /* Raleway-Black.ttf */; };
+		27C658471C166A3C006C0866 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C6583E1C166A3C006C0866 /* Raleway-Bold.ttf */; };
+		27C658481C166A3C006C0866 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C6583F1C166A3C006C0866 /* Raleway-ExtraBold.ttf */; };
+		27C658491C166A3C006C0866 /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C658401C166A3C006C0866 /* Raleway-ExtraLight.ttf */; };
+		27C6584A1C166A3C006C0866 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C658411C166A3C006C0866 /* Raleway-Light.ttf */; };
+		27C6584B1C166A3C006C0866 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C658421C166A3C006C0866 /* Raleway-Medium.ttf */; };
+		27C6584C1C166A3C006C0866 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C658431C166A3C006C0866 /* Raleway-Regular.ttf */; };
+		27C6584D1C166A3C006C0866 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C658441C166A3C006C0866 /* Raleway-SemiBold.ttf */; };
+		27C6584E1C166A3C006C0866 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C658451C166A3C006C0866 /* Raleway-Thin.ttf */; };
+		27C658501C167400006C0866 /* LoopingPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6584F1C167400006C0866 /* LoopingPlayer.swift */; };
 		27D1A4871C0EA8CA00C400F6 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1A4861C0EA8CA00C400F6 /* ProductTableViewCell.swift */; };
 		27F4EE141BFAC6BB006D34C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4EE131BFAC6BB006D34C2 /* AppDelegate.swift */; };
 		27F4EE161BFAC6BB006D34C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4EE151BFAC6BB006D34C2 /* ViewController.swift */; };
@@ -33,6 +56,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2766051F1C17CCDE004E70B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27F4EE081BFAC6BB006D34C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 276605161C17CCDD004E70B8;
+			remoteInfo = ScreenzTopShelf;
+		};
 		27F4EE221BFAC6BB006D34C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27F4EE081BFAC6BB006D34C2 /* Project object */;
@@ -49,13 +79,39 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		276605251C17CCDE004E70B8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				276605211C17CCDE004E70B8 /* ScreenzTopShelf.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		27046A0A1BFAD27200BD2D2E /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		272214971C17916900FD387E /* logs2-closeup--web.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "logs2-closeup--web.mov"; sourceTree = "<group>"; };
 		275990A91C0E8E050093B01D /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		275990AB1C0E8E280093B01D /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		275990AD1C0E90040093B01D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		275990AF1C0E91460093B01D /* DataStoreUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreUtils.swift; sourceTree = "<group>"; };
 		275990B11C0E9D7E0093B01D /* ScreenInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenInfoView.swift; sourceTree = "<group>"; };
+		2766050B1C179531004E70B8 /* myfire-1min-5600k.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "myfire-1min-5600k.mov"; sourceTree = "<group>"; };
+		2766050D1C17AF90004E70B8 /* toy2-1080-web.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "toy2-1080-web.mov"; sourceTree = "<group>"; };
+		2766050F1C17B675004E70B8 /* istockphoto-bells-web.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "istockphoto-bells-web.mov"; sourceTree = "<group>"; };
+		276605111C17B6C5004E70B8 /* istockphoto-winter-web.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "istockphoto-winter-web.mov"; sourceTree = "<group>"; };
+		276605171C17CCDD004E70B8 /* ScreenzTopShelf.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenzTopShelf.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		276605191C17CCDD004E70B8 /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
+		2766051C1C17CCDE004E70B8 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		2766051E1C17CCDE004E70B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276605271C17D716004E70B8 /* logs_closeup-web.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "logs_closeup-web.mov"; sourceTree = "<group>"; };
+		276605291C17D725004E70B8 /* fire_wide-1min-8000k.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "fire_wide-1min-8000k.mov"; sourceTree = "<group>"; };
+		2766052C1C17DAAC004E70B8 /* fire-wide.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fire-wide.jpg"; sourceTree = "<group>"; };
 		27B96F541C13568400DCA723 /* ScreenzViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenzViewController.swift; sourceTree = "<group>"; };
 		27B96F561C13657100DCA723 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27B96F581C13657500DCA723 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -64,6 +120,17 @@
 		27B96F5E1C13DB5E00DCA723 /* VibesPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibesPurchase.swift; sourceTree = "<group>"; };
 		27BF9ABE1C0D45CD00D04D6B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		27BF9AC01C0E52B400D04D6B /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		27C6583A1C163981006C0866 /* screenz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = screenz.plist; sourceTree = "<group>"; };
+		27C6583D1C166A3C006C0866 /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Black.ttf"; sourceTree = "<group>"; };
+		27C6583E1C166A3C006C0866 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		27C6583F1C166A3C006C0866 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		27C658401C166A3C006C0866 /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		27C658411C166A3C006C0866 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		27C658421C166A3C006C0866 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		27C658431C166A3C006C0866 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		27C658441C166A3C006C0866 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		27C658451C166A3C006C0866 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		27C6584F1C167400006C0866 /* LoopingPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopingPlayer.swift; sourceTree = "<group>"; };
 		27D1A4861C0EA8CA00C400F6 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		27F4EE101BFAC6BB006D34C2 /* Screenz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Screenz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F4EE131BFAC6BB006D34C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +149,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		276605141C17CCDD004E70B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2766051A1C17CCDD004E70B8 /* TVServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F4EE0D1BFAC6BB006D34C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,6 +191,7 @@
 				275990B11C0E9D7E0093B01D /* ScreenInfoView.swift */,
 				27D1A4861C0EA8CA00C400F6 /* ProductTableViewCell.swift */,
 				27B96F5A1C13663C00DCA723 /* ScreenCollectionViewCell.swift */,
+				27C6584F1C167400006C0866 /* LoopingPlayer.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -134,6 +210,33 @@
 			name = "Data Layer";
 			sourceTree = "<group>";
 		};
+		276605181C17CCDD004E70B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				276605191C17CCDD004E70B8 /* TVServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2766051B1C17CCDE004E70B8 /* ScreenzTopShelf */ = {
+			isa = PBXGroup;
+			children = (
+				2766052C1C17DAAC004E70B8 /* fire-wide.jpg */,
+				2766051C1C17CCDE004E70B8 /* ServiceProvider.swift */,
+				2766051E1C17CCDE004E70B8 /* Info.plist */,
+			);
+			path = ScreenzTopShelf;
+			sourceTree = "<group>";
+		};
+		276605261C17D707004E70B8 /* New Vids */ = {
+			isa = PBXGroup;
+			children = (
+				276605291C17D725004E70B8 /* fire_wide-1min-8000k.mov */,
+				276605271C17D716004E70B8 /* logs_closeup-web.mov */,
+			);
+			name = "New Vids";
+			sourceTree = "<group>";
+		};
 		27B96F531C13567000DCA723 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,15 +246,39 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		27C6583C1C166A07006C0866 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				27C6583D1C166A3C006C0866 /* Raleway-Black.ttf */,
+				27C6583E1C166A3C006C0866 /* Raleway-Bold.ttf */,
+				27C6583F1C166A3C006C0866 /* Raleway-ExtraBold.ttf */,
+				27C658401C166A3C006C0866 /* Raleway-ExtraLight.ttf */,
+				27C658411C166A3C006C0866 /* Raleway-Light.ttf */,
+				27C658421C166A3C006C0866 /* Raleway-Medium.ttf */,
+				27C658431C166A3C006C0866 /* Raleway-Regular.ttf */,
+				27C658441C166A3C006C0866 /* Raleway-SemiBold.ttf */,
+				27C658451C166A3C006C0866 /* Raleway-Thin.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		27F4EE071BFAC6BB006D34C2 = {
 			isa = PBXGroup;
 			children = (
+				276605261C17D707004E70B8 /* New Vids */,
+				276605111C17B6C5004E70B8 /* istockphoto-winter-web.mov */,
+				2766050F1C17B675004E70B8 /* istockphoto-bells-web.mov */,
+				2766050D1C17AF90004E70B8 /* toy2-1080-web.mov */,
+				2766050B1C179531004E70B8 /* myfire-1min-5600k.mov */,
+				272214971C17916900FD387E /* logs2-closeup--web.mov */,
 				27B96F581C13657500DCA723 /* AVKit.framework */,
 				27B96F561C13657100DCA723 /* AVFoundation.framework */,
 				27BF9ABE1C0D45CD00D04D6B /* StoreKit.framework */,
 				27F4EE121BFAC6BB006D34C2 /* Screenz */,
 				27F4EE241BFAC6BB006D34C2 /* ScreenzTests */,
 				27F4EE2F1BFAC6BB006D34C2 /* ScreenzUITests */,
+				2766051B1C17CCDE004E70B8 /* ScreenzTopShelf */,
+				276605181C17CCDD004E70B8 /* Frameworks */,
 				27F4EE111BFAC6BB006D34C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,6 +289,7 @@
 				27F4EE101BFAC6BB006D34C2 /* Screenz.app */,
 				27F4EE211BFAC6BB006D34C2 /* ScreenzTests.xctest */,
 				27F4EE2C1BFAC6BB006D34C2 /* ScreenzUITests.xctest */,
+				276605171C17CCDD004E70B8 /* ScreenzTopShelf.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +297,7 @@
 		27F4EE121BFAC6BB006D34C2 /* Screenz */ = {
 			isa = PBXGroup;
 			children = (
+				27C6583C1C166A07006C0866 /* Fonts */,
 				27B96F531C13567000DCA723 /* Controllers */,
 				275990A81C0E81E90093B01D /* Data Layer */,
 				275990A71C0E81E50093B01D /* View */,
@@ -178,6 +307,7 @@
 				27F4EE171BFAC6BB006D34C2 /* Main.storyboard */,
 				27F4EE1A1BFAC6BB006D34C2 /* Assets.xcassets */,
 				27F4EE1C1BFAC6BB006D34C2 /* Info.plist */,
+				27C6583A1C163981006C0866 /* screenz.plist */,
 			);
 			path = Screenz;
 			sourceTree = "<group>";
@@ -203,6 +333,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		276605161C17CCDD004E70B8 /* ScreenzTopShelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276605221C17CCDE004E70B8 /* Build configuration list for PBXNativeTarget "ScreenzTopShelf" */;
+			buildPhases = (
+				276605131C17CCDD004E70B8 /* Sources */,
+				276605141C17CCDD004E70B8 /* Frameworks */,
+				276605151C17CCDD004E70B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenzTopShelf;
+			productName = ScreenzTopShelf;
+			productReference = 276605171C17CCDD004E70B8 /* ScreenzTopShelf.appex */;
+			productType = "com.apple.product-type.tv-app-extension";
+		};
 		27F4EE0F1BFAC6BB006D34C2 /* Screenz */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27F4EE351BFAC6BB006D34C2 /* Build configuration list for PBXNativeTarget "Screenz" */;
@@ -210,10 +357,12 @@
 				27F4EE0C1BFAC6BB006D34C2 /* Sources */,
 				27F4EE0D1BFAC6BB006D34C2 /* Frameworks */,
 				27F4EE0E1BFAC6BB006D34C2 /* Resources */,
+				276605251C17CCDE004E70B8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				276605201C17CCDE004E70B8 /* PBXTargetDependency */,
 			);
 			name = Screenz;
 			productName = Screenz;
@@ -266,6 +415,10 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Kyle Kirkland";
 				TargetAttributes = {
+					276605161C17CCDD004E70B8 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 34UDU57LAY;
+					};
 					27F4EE0F1BFAC6BB006D34C2 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 34UDU57LAY;
@@ -301,17 +454,44 @@
 				27F4EE0F1BFAC6BB006D34C2 /* Screenz */,
 				27F4EE201BFAC6BB006D34C2 /* ScreenzTests */,
 				27F4EE2B1BFAC6BB006D34C2 /* ScreenzUITests */,
+				276605161C17CCDD004E70B8 /* ScreenzTopShelf */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		276605151C17CCDD004E70B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2766052D1C17DAAC004E70B8 /* fire-wide.jpg in Resources */,
+				2766052B1C17D928004E70B8 /* fire_wide-1min-8000k.mov in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F4EE0E1BFAC6BB006D34C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276605121C17B6C5004E70B8 /* istockphoto-winter-web.mov in Resources */,
+				27C658481C166A3C006C0866 /* Raleway-ExtraBold.ttf in Resources */,
+				27C6584C1C166A3C006C0866 /* Raleway-Regular.ttf in Resources */,
+				27C658461C166A3C006C0866 /* Raleway-Black.ttf in Resources */,
+				27C6583B1C163981006C0866 /* screenz.plist in Resources */,
 				27F4EE1B1BFAC6BB006D34C2 /* Assets.xcassets in Resources */,
+				2766050C1C179531004E70B8 /* myfire-1min-5600k.mov in Resources */,
+				27C6584B1C166A3C006C0866 /* Raleway-Medium.ttf in Resources */,
+				276605101C17B675004E70B8 /* istockphoto-bells-web.mov in Resources */,
+				2766050E1C17AF90004E70B8 /* toy2-1080-web.mov in Resources */,
+				272214981C17916900FD387E /* logs2-closeup--web.mov in Resources */,
+				27C658471C166A3C006C0866 /* Raleway-Bold.ttf in Resources */,
+				276605281C17D716004E70B8 /* logs_closeup-web.mov in Resources */,
+				27C658491C166A3C006C0866 /* Raleway-ExtraLight.ttf in Resources */,
+				2766052A1C17D725004E70B8 /* fire_wide-1min-8000k.mov in Resources */,
 				27F4EE191BFAC6BB006D34C2 /* Main.storyboard in Resources */,
+				27C6584E1C166A3C006C0866 /* Raleway-Thin.ttf in Resources */,
+				27C6584A1C166A3C006C0866 /* Raleway-Light.ttf in Resources */,
+				27C6584D1C166A3C006C0866 /* Raleway-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +512,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		276605131C17CCDD004E70B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2766051D1C17CCDE004E70B8 /* ServiceProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F4EE0C1BFAC6BB006D34C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +540,7 @@
 				275990B01C0E91460093B01D /* DataStoreUtils.swift in Sources */,
 				27B96F5D1C138EA900DCA723 /* ScreenzPlayerViewController.swift in Sources */,
 				275990B21C0E9D7E0093B01D /* ScreenInfoView.swift in Sources */,
+				27C658501C167400006C0866 /* LoopingPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +563,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		276605201C17CCDE004E70B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 276605161C17CCDD004E70B8 /* ScreenzTopShelf */;
+			targetProxy = 2766051F1C17CCDE004E70B8 /* PBXContainerItemProxy */;
+		};
 		27F4EE231BFAC6BB006D34C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27F4EE0F1BFAC6BB006D34C2 /* Screenz */;
@@ -398,6 +592,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		276605231C17CCDE004E70B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				INFOPLIST_FILE = ScreenzTopShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kirkland.Screenz.ScreenzTopShelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		276605241C17CCDE004E70B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				INFOPLIST_FILE = ScreenzTopShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kirkland.Screenz.ScreenzTopShelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		27F4EE331BFAC6BB006D34C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,6 +706,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Screenz",
@@ -505,6 +726,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Screenz",
@@ -568,6 +790,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		276605221C17CCDE004E70B8 /* Build configuration list for PBXNativeTarget "ScreenzTopShelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276605231C17CCDE004E70B8 /* Debug */,
+				276605241C17CCDE004E70B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		27F4EE0B1BFAC6BB006D34C2 /* Build configuration list for PBXProject "Screenz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

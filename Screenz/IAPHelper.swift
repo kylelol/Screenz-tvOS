@@ -46,6 +46,21 @@ extension IAPHelper {
     func restorePurchases() {
         SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
     }
+    
+    func validateReceipt(productId: String, onCompletion: (NSError?)->()) {
+        if let receiptUrl = NSBundle.mainBundle().appStoreReceiptURL {
+            let receipt = NSData(contentsOfURL: receiptUrl)
+            let receiptData = receipt?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+            
+            ApiService.sharedInstance.validateReceiptForPuchase(productId, receiptData: receiptData!, onCompletion: { (error) -> () in
+                onCompletion(error)
+            })
+            
+            
+            
+        }
+        
+    }
 }
 
 //:- SKProductsRequestDelegate

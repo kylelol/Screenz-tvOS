@@ -15,6 +15,7 @@ class ApiService {
     
    // private let baseUrl = "http://screenz.herokuapp.com"
     private let baseUrl = "http://192.168.0.15:3000"
+    //private let baseUrl = "http://localhost:3000"
     
     static let sharedInstance = ApiService()
     
@@ -27,6 +28,7 @@ class ApiService {
             
             guard let data = data else {
                 print(error)
+
                 return
             }
             let json:JSON = JSON(data: data)
@@ -46,9 +48,19 @@ class ApiService {
         let session = NSURLSession.sharedSession()
 
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            
             onCompletion(error)
         }
         task.resume()
+    }
+    
+    func validateReceiptForPuchase(productId: String, receiptData: String, onCompletion: (NSError?)->()) {
+        
+        let params: [String: AnyObject] = ["product_id": productId, "receipt_data": receiptData ]
+        
+        apiPostRequest(baseUrl + "/receipt_validate", parameters: params) { (error) -> () in
+            onCompletion(error)
+        }
     }
     
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>description</key>
+		<string></string>
+		<key>purchaseId</key>
+		<string></string>
+		<key>title</key>
+		<string>Video 1</string>
+		<key>url</key>
+		<string>toy2-1080-web</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string></string>
+		<key>purchaseId</key>
+		<string></string>
+		<key>title</key>
+		<string>Video 2</string>
+		<key>url</key>
+		<string>logs_closeup-web</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string></string>
+		<key>purchaseId</key>
+		<string>com.Kirkland.Screenz.TestPurchase</string>
+		<key>title</key>
+		<string>Video 3</string>
+		<key>url</key>
+		<string>fire_wide-1min-8000k</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string></string>
+		<key>purchaseId</key>
+		<string>com.Kirkland.Screenz.TestPurchase</string>
+		<key>title</key>
+		<string>Video 4</string>
+		<key>url</key>
+		<string>istockphoto-bells-web</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string></string>
+		<key>purchaseId</key>
+		<string>com.Kirkland.Screenz.TestPurchase</string>
+		<key>title</key>
+		<string>Video 5</string>
+		<key>url</key>
+		<string>istockphoto-winter-web</string>
+	</dict>
+</array>
+</plist>

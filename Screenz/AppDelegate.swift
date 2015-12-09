@@ -19,13 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        let info = ["Fave": url.resourceSpecifier]
+        NSNotificationCenter.defaultCenter().postNotificationName("ShowFaveNotification", object: nil, userInfo: info)
+        return true
+    }
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         var iapContainer = window?.rootViewController as? IAPContainer
         iapContainer?.iapHelper = iapHelper
         
-        dataStore = DataStore(plistURL: NSURL.urlForFileInDocumentsDirectory("screenz", fileExtension: "plist"))
+        dataStore = DataStore(plistURL: NSBundle.mainBundle().URLForResource("screenz", withExtension: "plist")!)
         var dsContainer = window?.rootViewController as? DataStoreOwner
         dsContainer?.dataStore = dataStore
         

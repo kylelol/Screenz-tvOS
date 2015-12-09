@@ -9,31 +9,27 @@
 import UIKit
 import AVKit
 
-class ScreenzPlayerViewController: AVPlayerViewController {
+class ScreenzPlayerViewController: UIViewController {
     
+    var screen: Screen?
     var secondPlayer: AVPlayerItem?
     var firstPlayer: AVPlayerItem?
     var videoURL: NSURL!
+    
+    var bgVideoURL: NSURL?
+    var backgroundPlayer: AVPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.newVideo()
 
-        // Do any additional setup after loading the view.
-        self.player?.actionAtItemEnd = .None
-        self.secondPlayer = AVPlayerItem(URL: videoURL)
-        self.firstPlayer = AVPlayerItem(URL: videoURL)
-   
-        weak var w = self
-        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: nil, queue: nil) { (notification) -> Void in
-            let queuePlayer = w!.self.player! as! AVQueuePlayer
-            if(queuePlayer.currentItem == self.firstPlayer!) {
-                queuePlayer.insertItem(self.secondPlayer!, afterItem: nil)
-                self.firstPlayer!.seekToTime(kCMTimeZero)
-            } else {
-                queuePlayer.insertItem(self.firstPlayer!, afterItem: nil)
-                self.secondPlayer!.seekToTime(kCMTimeZero)
-            }
-        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: self.backgroundPlayer!.currentItem)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +37,36 @@ class ScreenzPlayerViewController: AVPlayerViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func newVideo() {
+        let url = NSBundle.mainBundle().URLForResource(screen!.url, withExtension: "mov")
+        let playerItem = AVPlayerItem(URL: url!)
+        
+        let tAsset = AVURLAsset(URL: url!)
+        let tEditRange = CMTimeRangeMake(CMTimeMake(0,1), CMTimeMake(tAsset.duration.value, tAsset.duration.timescale))
+        let tComposition = AVMutableComposition()
+        for i in 0...2 {
+            try! tComposition.insertTimeRange(tEditRange, ofAsset: tAsset, atTime: tComposition.duration)
+        }
+        
+        let tAVPlayerItem = AVPlayerItem(asset: tComposition)
+        
+        self.backgroundPlayer = AVPlayer(playerItem: tAVPlayerItem)
+        let playerLayer = AVPlayerLayer(player: self.backgroundPlayer)
+        
+        playerLayer.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
+        playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
+        self.view.layer.insertSublayer(playerLayer, atIndex: 0)
+        self.backgroundPlayer!.play()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "videoLoop", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.backgroundPlayer!.currentItem)
+        
+    }
+    
+    func videoLoop() {
+        
+        self.backgroundPlayer?.pause()
+        self.backgroundPlayer?.currentItem?.seekToTime(kCMTimeZero)
+        self.backgroundPlayer?.play()
+    }
     
 
     /*

@@ -13,23 +13,47 @@ final class DataStore {
     // MARK:- Storage
     var screens = [Screen]()
     var products = [SKProduct]()
+    var purchases = [String]()
     
-    init(screens: [Screen]) {
+    init(screens: [Screen], purchases: [String]) {
         self.screens = screens
+        self.purchases = purchases
+        
     }
 }
 
 // MARK:- Reading from disc
 extension DataStore {
     convenience init(plistURL: NSURL) {
-        guard let rawDict = DataStore.loadPlistFromURL(plistURL),
-            let screenArray = rawDict["screens"] as? [[String : AnyObject]],
-            let screens = Screen.fromDictArray(screenArray) else {
-                self.init(screens: [Screen]())
+        guard let rawDict = DataStore.loadPlistFromURL(plistURL)//,
+           // let screenArray = rawDict["screens"] as? [[String : AnyObject]],
+            //let screens = Screen.fromDictArray(screenArray) else { 
+            else {
+                
+                //TODO: Check for purchases in defaults and load them. 
+                if let purchases = NSUserDefaults.standardUserDefaults().objectForKey("purchases") {
+                    print("We have purchases \(purchases)")
+                    self.init(screens: [Screen](), purchases: purchases as! [String])
+                    return
+                }
+                self.init(screens: [Screen](), purchases: [String]())
                 return
         }
         
-        self.init(screens: screens)
+        //print(rawDict)
+        var screens = [Screen]()
+        for screen in rawDict {
+            print(screen)
+            screens.append(Screen.init(dict: screen as! [String : AnyObject])!)
+        }
+        
+        
+        var pArray = [String]()
+        if let purchases = NSUserDefaults.standardUserDefaults().objectForKey("purchases") {
+            pArray = purchases as! [String]
+        }
+        
+        self.init(screens: screens, purchases: pArray)
     }
     
     convenience init(plistName: String) {
@@ -41,9 +65,9 @@ extension DataStore {
         self.init(plistName: "screenz")
     }
     
-    private static func loadPlistFromURL(plistURL: NSURL) -> [String : AnyObject]? {
-        let rawDict = NSDictionary(contentsOfURL: plistURL)
-        return rawDict as? [String : AnyObject]
+    private static func loadPlistFromURL(plistURL: NSURL) -> [AnyObject]? {
+        let rawDict = NSArray(contentsOfURL: plistURL)
+        return rawDict as? [AnyObject]
     }
     
     static var defaultDataStorePresentOnDisk : Bool {
@@ -57,14 +81,22 @@ extension DataStore {
 // MARK:- Persisting
 extension DataStore {
     func save(plistName plistName: String) {
+        
         let serialisedData = [
-            "screens" : screens.map { $0.dictRepresentation }
+            "screens" : screens.map { $0.dictRepresentation }, "purchases": purchases
             ] as NSDictionary
-        serialisedData.writeToURL(NSURL.urlForFileInDocumentsDirectory(plistName, fileExtension: "plist"), atomically: true)
+        dispatch_async(dispatch_get_main_queue()) {
+            serialisedData.writeToURL(NSURL.urlForFileInDocumentsDirectory(plistName, fileExtension: "plist"), atomically: true)
+
+        }
     }
     
     func save() {
         save(plistName: "screenz")
+    }
+    
+    func savePurchases() {
+        NSUserDefaults.standardUserDefaults().setObject(self.purchases, forKey: "purchases")
     }
 }
 
@@ -103,7 +135,7 @@ extension DataStore: TableViewFormatter {
 extension DataStore: CollectionViewFormatter {
     
     func cv_numberOfRowsInSection(section: Int) -> Int {
-        return self.screens.count + self.products.count
+        return self.screens.count
     }
     
     func cv_objectForRowAtIndexPath(indexPath: NSIndexPath) -> AnyObject? {
@@ -118,6 +150,26 @@ extension DataStore: CollectionViewFormatter {
     
 }
 
+//MARK: Purchase Management
+extension DataStore {
+    func addPurchase(purchase: String) {
+        purchases.append(purchase)
+        savePurchases()
+    }
+    
+    //Nil for free
+    // No for not purchased
+    //Yes for puchased. 
+    func isScreenPurchased(screen: Screen) -> Bool? {
+        
+        guard let id = screen.productId else {
+            return nil
+        }
+        
+        return purchases.contains(id)
+    }
+}
+
 //MARK:- Products Management
 
 extension DataStore {
@@ -128,6 +180,14 @@ extension DataStore {
         self.products.removeAll()
 
         self.products.appendContentsOf(array)
+    }
+    
+    func priceForProductId(pID: String?) -> NSDecimalNumber? {
+        if let product = self.productForProductId(pID) {
+            return product.price
+        } else {
+            return nil
+        }
     }
     
     func productForProductId(pId: String?) -> SKProduct? {

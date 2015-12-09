@@ -9,11 +9,12 @@
 import UIKit
 import StoreKit
 
-@objc protocol ScreenInfoViewDelegate: class {
-    optional func didTapBuyButton(infoView: ScreenInfoView)
-    optional func didTapPreviewButton(infoView: ScreenInfoView)
-    optional func didTapPlayButton(infoView: ScreenInfoView)
-    optional func priceForButton(productId: String) -> SKProduct?
+protocol ScreenInfoViewDelegate: class {
+     func didTapBuyButton(infoView: ScreenInfoView)
+     func didTapPreviewButton(infoView: ScreenInfoView)
+     func didTapPlayButton(infoView: ScreenInfoView)
+     func priceForButton(productId: String) -> NSDecimalNumber?
+     func isScreenPurchased(screen: Screen) -> Bool?
 }
 
 class ScreenInfoView: UIView {
@@ -33,9 +34,23 @@ class ScreenInfoView: UIView {
                 titleLabel?.text = screen.title
                 descriptionLabel?.text = screen.description
                 
-                if let productId = screen.productId {
+                //Check if free or not.
+                if let purchased = self.delegate?.isScreenPurchased(screen) {
+                    if purchased {
+                        self.purchasedState()
+                    } else {
+                        //Can force unwrap becuase it has to be set to get here.
+                        buyState(self.delegate?.priceForButton(screen.productId!))
+                    }
+                    
+                } else {
+                    freeState()
+                }
+                
+                //Check if we have product Id.
+              /*  if let productId = screen.productId {
                     print("We have product id \(productId)")
-                    if let product = self.delegate?.priceForButton?(productId) {
+                    if let product = self.delegate?.priceForButton(productId) {
                         self.buyButton?.userInteractionEnabled = true
                         self.buyButton!.setTitle("$\(product.price)", forState: .Normal)
                         self.playButton!.userInteractionEnabled = false
@@ -46,7 +61,7 @@ class ScreenInfoView: UIView {
                     self.buyButton?.setTitle("Free", forState: .Normal)
                     self.playButton!.userInteractionEnabled = true
 
-                }
+                }*/
             }
         }
     }
@@ -67,17 +82,48 @@ class ScreenInfoView: UIView {
     }
     
     @IBAction func didTapBuyButton(sender: AnyObject) {
-        self.delegate?.didTapBuyButton?(self)
+        let text = self.buyButton!.titleLabel!.text!
+        if text != "Free" && text != "Bought" {
+            self.delegate?.didTapBuyButton(self)
+        }
     }
     
     @IBAction func didTapPrviewButton(sender: AnyObject) {
-        self.delegate?.didTapPreviewButton?(self)
+        self.delegate?.didTapPreviewButton(self)
     }
     
     @IBAction func didTapPlayButton(sender: AnyObject) {
-        self.delegate?.didTapPlayButton?(self)
+        let text = self.buyButton!.titleLabel!.text!
+
+        if text == "Free" || text == "Bought" {
+            self.delegate?.didTapPlayButton(self)
+        } else {
+            self.delegate?.didTapBuyButton(self)
+        }
     }
     
+    private func freeState() {
+        //self.buyButton?.userInteractionEnabled = false
+        self.buyButton?.setTitle("Free", forState: .Normal)
+       // self.playButton!.userInteractionEnabled = true
+    }
+    
+    private func buyState(price: NSDecimalNumber?) {
+        //self.buyButton?.userInteractionEnabled = true
+        
+        if let price = price {
+            self.buyButton!.setTitle("$\(price)", forState: .Normal)
+        } else {
+            
+        }
+       // self.playButton!.userInteractionEnabled = false
+    }
+    
+    private func purchasedState() {
+        //self.buyButton?.userInteractionEnabled = false
+        self.buyButton?.setTitle("Bought", forState: .Normal)
+       // self.playButton!.userInteractionEnabled = true
+    }
     
 
     /*

@@ -6,6 +6,14 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </mutableArray>
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -215,35 +223,42 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTt-pJ-2Ct">
                                                 <rect key="frame" x="887" y="0.0" width="893" height="658"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="lki-ti-3zT">
+                                                        <rect key="frame" x="413" y="0.0" width="480" height="260"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="480" id="41z-Cv-jzE"/>
+                                                            <constraint firstAttribute="height" constant="260" id="nUl-hx-PF5"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <animations/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="lki-ti-3zT" secondAttribute="trailing" id="f7r-Yr-1S9"/>
+                                                    <constraint firstItem="lki-ti-3zT" firstAttribute="top" secondItem="aTt-pJ-2Ct" secondAttribute="top" id="yNA-FN-XlP"/>
+                                                </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Christmas Screensavers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRc-be-keY">
-                                                <rect key="frame" x="107" y="94" width="433" height="55"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="754" misplaced="YES" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-Op-XIh">
+                                                <rect key="frame" x="107" y="79" width="142" height="55"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="40"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="45"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="754" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-Op-XIh">
-                                                <rect key="frame" x="107" y="199" width="124" height="48"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uq-FV-RpT">
-                                                <rect key="frame" x="107" y="297" width="783" height="137"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uq-FV-RpT">
+                                                <rect key="frame" x="107" y="184" width="783" height="137"/>
                                                 <animations/>
                                                 <string key="text">Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text</string>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="25"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="700" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="vKU-HC-WzF" userLabel="Action Views">
-                                                <rect key="frame" x="107" y="434" width="780" height="224"/>
+                                            <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="700" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="vKU-HC-WzF" userLabel="Action Views">
+                                                <rect key="frame" x="107" y="321" width="780" height="337"/>
                                                 <subviews>
-                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-xU-N1b">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-xU-N1b">
                                                         <rect key="frame" x="30" y="69" width="220" height="86"/>
                                                         <animations/>
                                                         <constraints>
@@ -256,7 +271,7 @@
                                                             <action selector="didTapBuyButton:" destination="Phx-kr-TKI" eventType="primaryActionTriggered" id="ynd-17-pjT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hM1-bj-Q9c">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hM1-bj-Q9c">
                                                         <rect key="frame" x="280" y="69" width="220" height="86"/>
                                                         <animations/>
                                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -265,7 +280,7 @@
                                                             <action selector="didTapPrviewButton:" destination="Phx-kr-TKI" eventType="primaryActionTriggered" id="K1f-4I-5wA"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyZ-bH-Z2o">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyZ-bH-Z2o">
                                                         <rect key="frame" x="530" y="69" width="220" height="86"/>
                                                         <animations/>
                                                         <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
@@ -296,18 +311,16 @@
                                         <constraints>
                                             <constraint firstItem="aTt-pJ-2Ct" firstAttribute="top" secondItem="Phx-kr-TKI" secondAttribute="top" id="2IS-rt-G76"/>
                                             <constraint firstItem="8Uq-FV-RpT" firstAttribute="leading" secondItem="Bcd-Op-XIh" secondAttribute="leading" id="ADK-Ks-FTx"/>
-                                            <constraint firstItem="gRc-be-keY" firstAttribute="leading" secondItem="Phx-kr-TKI" secondAttribute="trailing" multiplier="0.06" id="Fpi-26-ldd"/>
+                                            <constraint firstItem="Bcd-Op-XIh" firstAttribute="top" secondItem="Phx-kr-TKI" secondAttribute="bottom" multiplier="0.12" id="DYY-oo-kXY"/>
                                             <constraint firstAttribute="bottom" secondItem="vKU-HC-WzF" secondAttribute="bottom" id="ORo-iE-Wii"/>
-                                            <constraint firstItem="Bcd-Op-XIh" firstAttribute="top" secondItem="gRc-be-keY" secondAttribute="bottom" constant="50" id="Tu5-me-kew"/>
-                                            <constraint firstItem="gRc-be-keY" firstAttribute="top" secondItem="Phx-kr-TKI" secondAttribute="bottom" multiplier="0.143" id="YYL-Ja-h7h"/>
                                             <constraint firstAttribute="trailing" secondItem="aTt-pJ-2Ct" secondAttribute="trailing" id="bYs-2m-rZ4"/>
                                             <constraint firstItem="aTt-pJ-2Ct" firstAttribute="leading" secondItem="vKU-HC-WzF" secondAttribute="trailing" id="ify-WF-5OB"/>
                                             <constraint firstItem="vKU-HC-WzF" firstAttribute="top" secondItem="8Uq-FV-RpT" secondAttribute="bottom" id="jf9-rT-eHZ"/>
                                             <constraint firstItem="8Uq-FV-RpT" firstAttribute="top" secondItem="Bcd-Op-XIh" secondAttribute="bottom" constant="50" id="kNr-ir-Esv"/>
                                             <constraint firstItem="vKU-HC-WzF" firstAttribute="leading" secondItem="8Uq-FV-RpT" secondAttribute="leading" id="krD-M0-zIP"/>
                                             <constraint firstAttribute="bottom" secondItem="aTt-pJ-2Ct" secondAttribute="bottom" id="sVM-zX-SFk"/>
-                                            <constraint firstItem="Bcd-Op-XIh" firstAttribute="leading" secondItem="gRc-be-keY" secondAttribute="leading" id="urQ-yf-bzF"/>
                                             <constraint firstItem="8Uq-FV-RpT" firstAttribute="trailing" secondItem="Phx-kr-TKI" secondAttribute="trailing" multiplier="0.5" id="v9G-tG-Fm1"/>
+                                            <constraint firstItem="Bcd-Op-XIh" firstAttribute="leading" secondItem="Phx-kr-TKI" secondAttribute="trailing" multiplier="0.06" id="ydd-UW-4zs"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="buyButton" destination="pcQ-xU-N1b" id="Pkh-zD-KWJ"/>
@@ -404,7 +417,7 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dgq-0u-q6P" secondAttribute="trailing" constant="70" id="3QB-Hg-gcV"/>
                             <constraint firstItem="Rqn-M2-6RV" firstAttribute="top" secondItem="o6F-8H-IO6" secondAttribute="bottom" id="5Iv-wD-nSp"/>
@@ -443,5 +456,6 @@
     </scenes>
     <resources>
         <image name="images" width="142" height="88"/>
+        <image name="title" width="400" height="240"/>
     </resources>
 </document>

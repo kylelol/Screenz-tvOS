@@ -20,7 +20,17 @@ final class Screen {
         self.url = url
         self.title = title
         self.description = description
-        self.productId = productId
+        
+        if let prodId = productId {
+            if productId == "" {
+                self.productId = nil
+            } else {
+                self.productId = prodId
+            }
+
+        } else {
+            self.productId = nil
+        }
     }
 }
 
@@ -52,23 +62,22 @@ extension Screen {
 
 extension Screen : Serializable {
     convenience init?(dict: [String : AnyObject]) {
-        guard let id = dict["idKey"] as? Int,
-            let url = dict["urlKey"] as? String,
-            let title = dict["titleKey"] as? String,
-            let desc = dict["descriptionKey"] as? String else {
+        guard
+            let url = dict["url"] as? String,
+            let title = dict["title"] as? String,
+            let desc = dict["description"] as? String else {
                 return nil
         }
         
-        self.init(id: id, url: url, title: title, description: desc, productId: dict["productIdKey"] as? String)
+        self.init(id: 0, url: url, title: title, description: desc, productId: dict["purchaseId"] as? String)
     }
     
     var dictRepresentation : [String : AnyObject] {
         return [
-            "idKey"            : id,
-            "urlKey"          : url,
-            "titleKey"         : title,
-            "descriptionKey"   : description,
-            "productIdKey"     : productId != nil ? productId! : ""
+            "url"          : url,
+            "title"         : title,
+            "description"   : description,
+            "purchaseId"     : productId != nil ? productId! : ""
         ]
     }
 }
