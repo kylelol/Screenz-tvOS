@@ -13,7 +13,7 @@ protocol ScreenInfoViewDelegate: class {
      func didTapBuyButton(infoView: ScreenInfoView)
      func didTapPreviewButton(infoView: ScreenInfoView)
      func didTapPlayButton(infoView: ScreenInfoView)
-     func priceForButton(productId: String) -> NSDecimalNumber?
+     func priceForButton(productId: String) -> NSString?
      func isScreenPurchased(screen: Screen) -> Bool?
 }
 
@@ -45,7 +45,22 @@ class ScreenInfoView: UIView {
                     
                 } else {
                     freeState()
+                    
+                    if screen.url == ""  {
+                        self.buyButton?.setTitle("$1.99", forState: .Normal)
+                    }
                 }
+                
+                if screen.url == ""  {
+                    self.previewButton?.userInteractionEnabled = false
+                    self.playButton?.userInteractionEnabled = false
+                    
+                } else {
+                    self.previewButton?.userInteractionEnabled = true
+                    self.playButton?.userInteractionEnabled = true
+                }
+                
+
                 
                 //Check if we have product Id.
               /*  if let productId = screen.productId {
@@ -98,7 +113,7 @@ class ScreenInfoView: UIView {
         if text == "Free" || text == "Bought" {
             self.delegate?.didTapPlayButton(self)
         } else {
-            self.delegate?.didTapBuyButton(self)
+            self.delegate?.didTapPlayButton(self)
         }
     }
     
@@ -108,11 +123,11 @@ class ScreenInfoView: UIView {
        // self.playButton!.userInteractionEnabled = true
     }
     
-    private func buyState(price: NSDecimalNumber?) {
+    private func buyState(price: NSString?) {
         //self.buyButton?.userInteractionEnabled = true
         
         if let price = price {
-            self.buyButton!.setTitle("$\(price)", forState: .Normal)
+            self.buyButton!.setTitle("\(price)", forState: .Normal)
         } else {
             
         }

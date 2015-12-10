@@ -10,6 +10,10 @@ import Foundation
 
 enum VibesPurchase: String {
     case TestPurchase = "TestPurchase"
+    case Bundle = "3Bundle"
+    case Candles = "Candles"
+    case FireplaceClose = "CloseFireplace"
+    case Santa = "Santa"
     
     var productId: String {
         return (NSBundle.mainBundle().bundleIdentifier ?? "") + "." + rawValue

@@ -7,11 +7,13 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+            <string>Raleway-Bold</string>
+            <string>Raleway-Bold</string>
+        </mutableArray>
         <mutableArray key="Raleway-Medium.ttf">
             <string>Raleway-Medium</string>
-        </mutableArray>
-        <mutableArray key="Raleway-Regular.ttf">
-            <string>Raleway-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -243,7 +245,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="754" misplaced="YES" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-Op-XIh">
                                                 <rect key="frame" x="107" y="79" width="142" height="55"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="45"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="50"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -251,7 +253,7 @@
                                                 <rect key="frame" x="107" y="184" width="783" height="137"/>
                                                 <animations/>
                                                 <string key="text">Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text Really long motherfucking text</string>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="35"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -352,8 +354,54 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="images" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpX-54-c2o">
-                                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpX-54-c2o">
+                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Restore Purchases" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWo-vt-nna">
+                                                            <rect key="frame" x="58" y="51" width="144" height="69"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="30"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstItem="OWo-vt-nna" firstAttribute="centerX" secondItem="lpd-CX-zcz" secondAttribute="centerX" id="CWM-8T-dy2"/>
+                                                    <constraint firstItem="FpX-54-c2o" firstAttribute="top" secondItem="lpd-CX-zcz" secondAttribute="top" id="H2B-qQ-ZUk"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="OWo-vt-nna" secondAttribute="trailing" constant="20" id="NB3-oK-B7Z"/>
+                                                    <constraint firstItem="OWo-vt-nna" firstAttribute="centerY" secondItem="lpd-CX-zcz" secondAttribute="centerY" id="NgX-f7-cac"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FpX-54-c2o" secondAttribute="bottom" id="Yft-yj-z08"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FpX-54-c2o" secondAttribute="trailing" id="cmH-5E-dhk"/>
+                                                    <constraint firstItem="OWo-vt-nna" firstAttribute="leading" secondItem="lpd-CX-zcz" secondAttribute="leadingMargin" constant="20" id="dVR-hq-JLh"/>
+                                                    <constraint firstItem="FpX-54-c2o" firstAttribute="leading" secondItem="lpd-CX-zcz" secondAttribute="leading" id="tym-OG-me1"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="restorePurchasesLabel" destination="OWo-vt-nna" id="8rf-3v-a6x"/>
+                                                    <outlet property="thumbnailImage" destination="FpX-54-c2o" id="Z6R-KY-cES"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BundleCollectionViewCell" id="M5N-ZV-I5l">
+                                                <rect key="frame" x="400" y="56" width="260" height="170"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="santaClose" translatesAutoresizingMaskIntoConstraints="NO" id="aNW-r0-a9m">
+                                                            <rect key="frame" x="0.0" y="85" width="130" height="85"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeFire" translatesAutoresizingMaskIntoConstraints="NO" id="NyH-Rh-7XZ">
+                                                            <rect key="frame" x="130" y="85" width="130" height="85"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="candlesWide" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6FO-0Q-m08">
+                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="85"/>
                                                             <animations/>
                                                         </imageView>
                                                     </subviews>
@@ -362,38 +410,54 @@
                                                 </view>
                                                 <animations/>
                                                 <constraints>
-                                                    <constraint firstItem="FpX-54-c2o" firstAttribute="top" secondItem="lpd-CX-zcz" secondAttribute="top" id="H2B-qQ-ZUk"/>
-                                                    <constraint firstAttribute="bottom" secondItem="FpX-54-c2o" secondAttribute="bottom" id="Yft-yj-z08"/>
-                                                    <constraint firstAttribute="trailing" secondItem="FpX-54-c2o" secondAttribute="trailing" id="cmH-5E-dhk"/>
-                                                    <constraint firstItem="FpX-54-c2o" firstAttribute="leading" secondItem="lpd-CX-zcz" secondAttribute="leading" id="tym-OG-me1"/>
+                                                    <constraint firstItem="6FO-0Q-m08" firstAttribute="height" secondItem="M5N-ZV-I5l" secondAttribute="height" multiplier="0.5" id="0Kc-n0-IUw"/>
+                                                    <constraint firstItem="NyH-Rh-7XZ" firstAttribute="centerY" secondItem="aNW-r0-a9m" secondAttribute="centerY" id="2ga-Kh-Ft3"/>
+                                                    <constraint firstItem="NyH-Rh-7XZ" firstAttribute="width" secondItem="aNW-r0-a9m" secondAttribute="width" id="3TO-ab-xIk"/>
+                                                    <constraint firstItem="6FO-0Q-m08" firstAttribute="leading" secondItem="M5N-ZV-I5l" secondAttribute="leading" id="495-xu-pRA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aNW-r0-a9m" secondAttribute="bottom" id="9wv-n8-3xc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NyH-Rh-7XZ" secondAttribute="trailing" id="Kay-iU-rM8"/>
+                                                    <constraint firstItem="NyH-Rh-7XZ" firstAttribute="height" secondItem="aNW-r0-a9m" secondAttribute="height" id="QW4-lI-tpD"/>
+                                                    <constraint firstItem="aNW-r0-a9m" firstAttribute="width" secondItem="6FO-0Q-m08" secondAttribute="width" multiplier="0.5" id="Qtq-Oj-ird"/>
+                                                    <constraint firstItem="aNW-r0-a9m" firstAttribute="leading" secondItem="M5N-ZV-I5l" secondAttribute="leading" id="bzX-tG-Yjl"/>
+                                                    <constraint firstItem="aNW-r0-a9m" firstAttribute="top" secondItem="6FO-0Q-m08" secondAttribute="bottom" id="iCm-Hp-svN"/>
+                                                    <constraint firstItem="6FO-0Q-m08" firstAttribute="top" secondItem="M5N-ZV-I5l" secondAttribute="top" id="kgk-gH-pLl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6FO-0Q-m08" secondAttribute="trailing" id="uc9-tq-jeo"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outlet property="thumbnailImage" destination="FpX-54-c2o" id="Z6R-KY-cES"/>
-                                                </connections>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="M5N-ZV-I5l">
-                                                <rect key="frame" x="400" y="56" width="260" height="170"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <animations/>
-                                                <color key="backgroundColor" red="0.3803921569" green="0.87058823529999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </collectionViewCell>
-                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="Gp7-WF-pS9">
+                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RestorePurchaseCollectionViewCell" id="Gp7-WF-pS9">
                                                 <rect key="frame" x="725" y="56" width="260" height="170"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restore Purchases" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qox-nF-Rdm">
+                                                            <rect key="frame" x="28" y="49" width="204" height="73"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="31"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="treesBackdrop" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgq-wn-wGg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.3803921569" green="0.87058823529999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="bgq-wn-wGg" firstAttribute="top" secondItem="Gp7-WF-pS9" secondAttribute="top" id="M8g-US-tAU"/>
+                                                    <constraint firstItem="Qox-nF-Rdm" firstAttribute="centerX" secondItem="Gp7-WF-pS9" secondAttribute="centerX" id="P4f-DQ-usW"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="Qox-nF-Rdm" secondAttribute="trailing" constant="20" id="Zl5-ec-fji"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bgq-wn-wGg" secondAttribute="trailing" id="ahL-lB-xR4"/>
+                                                    <constraint firstItem="Qox-nF-Rdm" firstAttribute="leading" secondItem="Gp7-WF-pS9" secondAttribute="leadingMargin" constant="20" id="ciR-nR-TX1"/>
+                                                    <constraint firstItem="bgq-wn-wGg" firstAttribute="leading" secondItem="Gp7-WF-pS9" secondAttribute="leading" id="d8V-pp-9iH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bgq-wn-wGg" secondAttribute="bottom" id="odo-R7-lGd"/>
+                                                    <constraint firstItem="Qox-nF-Rdm" firstAttribute="centerY" secondItem="Gp7-WF-pS9" secondAttribute="centerY" id="ycm-yp-Jtr"/>
+                                                </constraints>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -455,7 +519,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="candlesWide" width="260" height="85"/>
+        <image name="closeFire" width="130" height="85"/>
         <image name="images" width="142" height="88"/>
+        <image name="santaClose" width="130" height="85"/>
         <image name="title" width="400" height="240"/>
+        <image name="treesBackdrop" width="400" height="240"/>
     </resources>
 </document>

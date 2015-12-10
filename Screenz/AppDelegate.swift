@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let iapHelper = IAPHelper(prodIds: Set(
-        ["com.Kirkland.Screenz.TestPurchase"]))
+        ["com.Kirkland.Screenz.Santa", "com.Kirkland.Screenz.Candles", "com.Kirkland.Screenz.3Bundle", "com.Kirkland.Screenz.CloseFireplace"]))
     var dataStore: DataStore?
 
 

@@ -4,53 +4,63 @@
 <array>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>This is a bundle of 3 videos for the price of one. Buy it today!</string>
 		<key>purchaseId</key>
-		<string></string>
+		<string>com.Kirkland.Screenz.3Bundle</string>
 		<key>title</key>
-		<string>Video 1</string>
+		<string>3 Video Bundle</string>
 		<key>url</key>
-		<string>toy2-1080-web</string>
+		<string></string>
 	</dict>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>This Christmas Fireplace is scientifically proven to keep you warm. Don&apos;t believe us? Why don&apos;t you just ask the Snow Buddies next door!</string>
 		<key>purchaseId</key>
 		<string></string>
 		<key>title</key>
-		<string>Video 2</string>
+		<string>Christmas Fireplace</string>
 		<key>url</key>
-		<string>logs_closeup-web</string>
+		<string>myfireplace-wide-20sec-ATV</string>
 	</dict>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>These guys may look like innocent little snow people...but don&apos;t be fooled by the cuteness. They work for the Grinch....I wouldn&apos;t trust them.</string>
 		<key>purchaseId</key>
-		<string>com.Kirkland.Screenz.TestPurchase</string>
+		<string></string>
 		<key>title</key>
-		<string>Video 3</string>
+		<string>Snow Buddies</string>
 		<key>url</key>
-		<string>fire_wide-1min-8000k</string>
+		<string>snowmen-loop-ATV</string>
 	</dict>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>Is it getting hot in here or what? </string>
 		<key>purchaseId</key>
-		<string>com.Kirkland.Screenz.TestPurchase</string>
+		<string>com.Kirkland.Screenz.CloseFireplace</string>
 		<key>title</key>
-		<string>Video 4</string>
+		<string>A Little Closer</string>
 		<key>url</key>
-		<string>istockphoto-bells-web</string>
+		<string>myfireplace-CLOSE-20sec-ATV</string>
 	</dict>
 	<dict>
 		<key>description</key>
-		<string></string>
+		<string>Guarenteed to keep Grandpa occupied until nap time this Holiday Season. </string>
 		<key>purchaseId</key>
-		<string>com.Kirkland.Screenz.TestPurchase</string>
+		<string>com.Kirkland.Screenz.Candles</string>
 		<key>title</key>
-		<string>Video 5</string>
+		<string>Candle Trifecta</string>
 		<key>url</key>
-		<string>istockphoto-winter-web</string>
+		<string>candles-ATV</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>We get it Santa...You can wave. Now bring us presents. </string>
+		<key>purchaseId</key>
+		<string>com.Kirkland.Screenz.Santa</string>
+		<key>title</key>
+		<string>Santa Says Hey</string>
+		<key>url</key>
+		<string>santa-20seconds-appletv-2</string>
 	</dict>
 </array>
 </plist>

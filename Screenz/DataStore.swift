@@ -166,7 +166,7 @@ extension DataStore {
             return nil
         }
         
-        return purchases.contains(id)
+        return purchases.contains(id) || purchases.contains(VibesPurchase.Bundle.productId)
     }
 }
 
@@ -182,9 +182,19 @@ extension DataStore {
         self.products.appendContentsOf(array)
     }
     
-    func priceForProductId(pID: String?) -> NSDecimalNumber? {
+    func priceForProductId(pID: String?) -> NSString? {
         if let product = self.productForProductId(pID) {
-            return product.price
+            print(product.priceLocale)
+/*NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+[numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+[numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+[numberFormatter setLocale:book.priceLocale];
+NSString *formattedPrice = [numberFormatter stringFromNumber:book.price];*/
+            let numberFormatter = NSNumberFormatter()
+            numberFormatter.formatterBehavior = NSNumberFormatterBehavior.Behavior10_4
+            numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+            numberFormatter.locale = product.priceLocale
+            return numberFormatter.stringFromNumber(product.price)
         } else {
             return nil
         }

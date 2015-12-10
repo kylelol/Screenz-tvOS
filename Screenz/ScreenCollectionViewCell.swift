@@ -12,12 +12,22 @@ class ScreenCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnailImage: UIImageView?
     
+    @IBOutlet weak var restorePurchasesLabel: UILabel!
+    
     var screen: Screen? {
         didSet {
             if let screen = screen {
                 
             }
         }
+    }
+    
+    func restorePurchasesState() {
+        self.restorePurchasesLabel.hidden = false
+        self.backgroundColor = UIColor.blackColor()
+        self.contentView.backgroundColor = UIColor.darkGrayColor()
+        self.thumbnailImage!.image =  UIImage(named: "treesBackdrop")
+        self.bringSubviewToFront(self.restorePurchasesLabel)
     }
     
 }

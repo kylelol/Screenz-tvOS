@@ -44,18 +44,14 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         // Do any additional setup after loading the view.
         
         self.configureCollectionView()
-      /*
-        ApiService.sharedInstance.getPopularTVShows { (JSON, error) -> Void in
-            self.dataStore?.batchAddScreens(Screen.screensWithJsonData(JSON.arrayValue))
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.collectionView.reloadData()
-            })
-
-           // self.startBgVideo()
-            
-        }*/
-                
+        self.screenInfoView?.screen = self.dataStore?.cv_objectForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? Screen
+        
         iapHelper?.requestProducts({ (products) -> () in
+            print(products)
+            print(products!.count)
+            for product in products! {
+                print(product.productIdentifier)
+            }
             self.dataStore?.batchAddProducts(products)
             self.collectionView.reloadData()
         })
@@ -73,7 +69,7 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handlePurchaseNotification:", name: IAPHelper.IAPHelperPurchaseNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("showTopShelfVideo:"), name: "ShowFaveNotification", object: nil)
 
-        self.newVideo("istockphoto-winter-web")
+        self.newVideo("snowmen-loop-ATV")
     }
     
     func showTopShelfVideo(notification: NSNotification) {
@@ -195,6 +191,7 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
     private func configureCollectionView() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+
     }
     
     override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
@@ -235,8 +232,7 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
     }
     
     func handlePurchaseNotification(notification: NSNotification) {
-        if let transaction = notification.object as? SKPaymentTransaction
-            where transaction.payment.productIdentifier == VibesPurchase.TestPurchase.productId {
+        if let transaction = notification.object as? SKPaymentTransaction {
                 print(transaction.payment.productIdentifier)
 
                 print("Time to give them there purchase")
@@ -250,9 +246,7 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
                     }
                 }
                 
-        } else if let productId = notification.object as? String {
         }
-        
     }
     
 
@@ -278,9 +272,40 @@ extension ScreenzViewController: ScreenInfoViewDelegate {
     }
     
     func didTapPlayButton(infoView: ScreenInfoView) {
-        
         self.playObject = infoView.screen
-        self.performSegueWithIdentifier("ScreenPlayerSegue", sender: nil)
+        
+        if infoView.buyButton!.titleLabel!.text == "Free" || infoView.buyButton!.titleLabel!.text == "Bought" {
+            self.performSegueWithIdentifier("ScreenPlayerSegue", sender: nil)
+
+        } else {
+            
+            if let purchased = self.dataStore?.isScreenPurchased(self.playObject!) {
+                if purchased {
+                    self.performSegueWithIdentifier("ScreenPlayerSegue", sender: nil)
+                } else {
+                    let alert = UIAlertController()
+                    alert.title = "Would you like to buy this video for \(self.dataStore!.priceForProductId(infoView.screen!.productId)!)?"
+                    alert.message = ""
+                    alert.addAction(UIAlertAction(title: "Buy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                        print("Time to buy")
+                        if let ds = self.dataStore {
+                            if let product = ds.productForProductId(infoView.screen!.productId!) {
+                                print(product)
+                                self.iapHelper?.buyProduct(product)
+                            }
+                        }
+                    }))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+                        print("Cancel")
+                    }))
+                    self.showDetailViewController(alert, sender: nil)
+                }
+            } else {
+                self.performSegueWithIdentifier("ScreenPlayerSegue", sender: nil)
+                
+            }
+            
+        }
         
     }
     
@@ -289,7 +314,7 @@ extension ScreenzViewController: ScreenInfoViewDelegate {
         self.swapBgVideoWithScreen(infoView.screen)
     }
     
-    func priceForButton(productId: String) -> NSDecimalNumber? {
+    func priceForButton(productId: String) -> NSString? {
         return self.dataStore?.priceForProductId(productId)
     }
     
@@ -323,16 +348,31 @@ extension ScreenzViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ScreenzCell", forIndexPath: indexPath) as! ScreenCollectionViewCell
-        
-        if let screen = self.dataStore?.cv_objectForRowAtIndexPath(indexPath) {
-            print((screen as! Screen).url)
-            let url = NSBundle.mainBundle().URLForResource((screen as! Screen).url, withExtension: "mov")
-            cell.thumbnailImage!.image = self.generateThumbnail(url!)
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BundleCollectionViewCell", forIndexPath: indexPath) as! UICollectionViewCell
+            
+            return cell
         }
         
         
-        return cell
+  
+        
+        if indexPath.row >= self.dataStore?.screens.count {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ScreenzCell", forIndexPath: indexPath) as! ScreenCollectionViewCell
+                cell.restorePurchasesState()
+            return cell
+        } else if let screen = self.dataStore?.cv_objectForRowAtIndexPath(indexPath) {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ScreenzCell", forIndexPath: indexPath) as! ScreenCollectionViewCell
+            print((screen as! Screen).url)
+            cell.restorePurchasesLabel.hidden = true
+            let url = NSBundle.mainBundle().URLForResource((screen as! Screen).url, withExtension: "mov")
+            cell.thumbnailImage!.image = self.generateThumbnail(url!)
+            return cell
+        }
+        
+        
+        
+        return UICollectionViewCell()
         
     }
     
@@ -344,7 +384,7 @@ extension ScreenzViewController: UICollectionViewDataSource {
     
         print(ds.cv_numberOfRowsInSection(section))
             
-        return ds.cv_numberOfRowsInSection(section)
+        return ds.cv_numberOfRowsInSection(section) + 1
     }
     
 }
@@ -368,6 +408,12 @@ extension ScreenzViewController: UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        if indexPath.row >= self.dataStore!.screens.count {
+            
+            print("Time to restore purchases")
+            self.iapHelper?.restorePurchases()
+            return
+        }
     
         self.playObject = self.dataStore?.cv_objectForRowAtIndexPath(indexPath) as? Screen
         
