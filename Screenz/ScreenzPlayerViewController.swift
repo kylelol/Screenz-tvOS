@@ -44,7 +44,7 @@ class ScreenzPlayerViewController: UIViewController {
         let tAsset = AVURLAsset(URL: url!)
         let tEditRange = CMTimeRangeMake(CMTimeMake(0,1), CMTimeMake(tAsset.duration.value, tAsset.duration.timescale))
         let tComposition = AVMutableComposition()
-        for i in 0...2 {
+        for i in 0...10 {
             try! tComposition.insertTimeRange(tEditRange, ofAsset: tAsset, atTime: tComposition.duration)
         }
         

@@ -13,6 +13,14 @@
 		271031AD1C18E3A000006717 /* myfireplace-CLOSE-20sec-ATV.mov in Resources */ = {isa = PBXBuildFile; fileRef = 271031AC1C18E3A000006717 /* myfireplace-CLOSE-20sec-ATV.mov */; };
 		271031AF1C18E3A600006717 /* myfireplace-wide-20sec-ATV.mov in Resources */ = {isa = PBXBuildFile; fileRef = 271031AE1C18E3A600006717 /* myfireplace-wide-20sec-ATV.mov */; };
 		271031B11C18E3AD00006717 /* snowmen-loop-ATV.mov in Resources */ = {isa = PBXBuildFile; fileRef = 271031B01C18E3AD00006717 /* snowmen-loop-ATV.mov */; };
+		2731CDCB1C193D0400F33067 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276605191C17CCDD004E70B8 /* TVServices.framework */; };
+		2731CDCE1C193D0400F33067 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2731CDCD1C193D0400F33067 /* ServiceProvider.swift */; };
+		2731CDD21C193D0400F33067 /* TopShelfVibes.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2731CDCA1C193D0400F33067 /* TopShelfVibes.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2731CDD81C193ED100F33067 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 2731CDD61C193ED100F33067 /* close.png */; };
+		2731CDD91C193ED100F33067 /* firewide.png in Resources */ = {isa = PBXBuildFile; fileRef = 2731CDD71C193ED100F33067 /* firewide.png */; };
+		2731CDDC1C193EDF00F33067 /* santa.png in Resources */ = {isa = PBXBuildFile; fileRef = 2731CDDA1C193EDF00F33067 /* santa.png */; };
+		2731CDDD1C193EDF00F33067 /* snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 2731CDDB1C193EDF00F33067 /* snowman.png */; };
+		2731CDDF1C193F0000F33067 /* candles.png in Resources */ = {isa = PBXBuildFile; fileRef = 2731CDDE1C193F0000F33067 /* candles.png */; };
 		275990AA1C0E8E050093B01D /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990A91C0E8E050093B01D /* Screen.swift */; };
 		275990AC1C0E8E280093B01D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990AB1C0E8E280093B01D /* DataModel.swift */; };
 		275990AE1C0E90040093B01D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275990AD1C0E90040093B01D /* DataStore.swift */; };
@@ -49,6 +57,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2731CDD01C193D0400F33067 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27F4EE081BFAC6BB006D34C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2731CDC91C193D0400F33067;
+			remoteInfo = TopShelfVibes;
+		};
 		27F4EE221BFAC6BB006D34C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27F4EE081BFAC6BB006D34C2 /* Project object */;
@@ -72,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				2731CDD21C193D0400F33067 /* TopShelfVibes.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +101,14 @@
 		271031AC1C18E3A000006717 /* myfireplace-CLOSE-20sec-ATV.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "myfireplace-CLOSE-20sec-ATV.mov"; sourceTree = "<group>"; };
 		271031AE1C18E3A600006717 /* myfireplace-wide-20sec-ATV.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "myfireplace-wide-20sec-ATV.mov"; sourceTree = "<group>"; };
 		271031B01C18E3AD00006717 /* snowmen-loop-ATV.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "snowmen-loop-ATV.mov"; sourceTree = "<group>"; };
+		2731CDCA1C193D0400F33067 /* TopShelfVibes.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TopShelfVibes.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2731CDCD1C193D0400F33067 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		2731CDCF1C193D0400F33067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2731CDD61C193ED100F33067 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		2731CDD71C193ED100F33067 /* firewide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firewide.png; sourceTree = "<group>"; };
+		2731CDDA1C193EDF00F33067 /* santa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = santa.png; sourceTree = "<group>"; };
+		2731CDDB1C193EDF00F33067 /* snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowman.png; sourceTree = "<group>"; };
+		2731CDDE1C193F0000F33067 /* candles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = candles.png; sourceTree = "<group>"; };
 		275990A91C0E8E050093B01D /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		275990AB1C0E8E280093B01D /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		275990AD1C0E90040093B01D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
@@ -128,6 +152,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2731CDC71C193D0400F33067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2731CDCB1C193D0400F33067 /* TVServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F4EE0D1BFAC6BB006D34C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +187,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2731CDCC1C193D0400F33067 /* TopShelfVibes */ = {
+			isa = PBXGroup;
+			children = (
+				2731CDDE1C193F0000F33067 /* candles.png */,
+				2731CDDA1C193EDF00F33067 /* santa.png */,
+				2731CDDB1C193EDF00F33067 /* snowman.png */,
+				2731CDD61C193ED100F33067 /* close.png */,
+				2731CDD71C193ED100F33067 /* firewide.png */,
+				2731CDCD1C193D0400F33067 /* ServiceProvider.swift */,
+				2731CDCF1C193D0400F33067 /* Info.plist */,
+			);
+			path = TopShelfVibes;
+			sourceTree = "<group>";
+		};
 		275990A71C0E81E50093B01D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +282,7 @@
 				27F4EE121BFAC6BB006D34C2 /* Screenz */,
 				27F4EE241BFAC6BB006D34C2 /* ScreenzTests */,
 				27F4EE2F1BFAC6BB006D34C2 /* ScreenzUITests */,
+				2731CDCC1C193D0400F33067 /* TopShelfVibes */,
 				276605181C17CCDD004E70B8 /* Frameworks */,
 				27F4EE111BFAC6BB006D34C2 /* Products */,
 			);
@@ -247,6 +294,7 @@
 				27F4EE101BFAC6BB006D34C2 /* Screenz.app */,
 				27F4EE211BFAC6BB006D34C2 /* ScreenzTests.xctest */,
 				27F4EE2C1BFAC6BB006D34C2 /* ScreenzUITests.xctest */,
+				2731CDCA1C193D0400F33067 /* TopShelfVibes.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +338,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2731CDC91C193D0400F33067 /* TopShelfVibes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2731CDD31C193D0400F33067 /* Build configuration list for PBXNativeTarget "TopShelfVibes" */;
+			buildPhases = (
+				2731CDC61C193D0400F33067 /* Sources */,
+				2731CDC71C193D0400F33067 /* Frameworks */,
+				2731CDC81C193D0400F33067 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TopShelfVibes;
+			productName = TopShelfVibes;
+			productReference = 2731CDCA1C193D0400F33067 /* TopShelfVibes.appex */;
+			productType = "com.apple.product-type.tv-app-extension";
+		};
 		27F4EE0F1BFAC6BB006D34C2 /* Screenz */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27F4EE351BFAC6BB006D34C2 /* Build configuration list for PBXNativeTarget "Screenz" */;
@@ -302,6 +367,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2731CDD11C193D0400F33067 /* PBXTargetDependency */,
 			);
 			name = Screenz;
 			productName = Screenz;
@@ -354,6 +420,10 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Kyle Kirkland";
 				TargetAttributes = {
+					2731CDC91C193D0400F33067 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 34UDU57LAY;
+					};
 					27F4EE0F1BFAC6BB006D34C2 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 34UDU57LAY;
@@ -389,11 +459,24 @@
 				27F4EE0F1BFAC6BB006D34C2 /* Screenz */,
 				27F4EE201BFAC6BB006D34C2 /* ScreenzTests */,
 				27F4EE2B1BFAC6BB006D34C2 /* ScreenzUITests */,
+				2731CDC91C193D0400F33067 /* TopShelfVibes */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2731CDC81C193D0400F33067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2731CDD91C193ED100F33067 /* firewide.png in Resources */,
+				2731CDDC1C193EDF00F33067 /* santa.png in Resources */,
+				2731CDDF1C193F0000F33067 /* candles.png in Resources */,
+				2731CDD81C193ED100F33067 /* close.png in Resources */,
+				2731CDDD1C193EDF00F33067 /* snowman.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F4EE0E1BFAC6BB006D34C2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,6 +518,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2731CDC61C193D0400F33067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2731CDCE1C193D0400F33067 /* ServiceProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27F4EE0C1BFAC6BB006D34C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,6 +569,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2731CDD11C193D0400F33067 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2731CDC91C193D0400F33067 /* TopShelfVibes */;
+			targetProxy = 2731CDD01C193D0400F33067 /* PBXContainerItemProxy */;
+		};
 		27F4EE231BFAC6BB006D34C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27F4EE0F1BFAC6BB006D34C2 /* Screenz */;
@@ -502,6 +598,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2731CDD41C193D0400F33067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TopShelfVibes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kirkland.Screenz.TopShelfVibes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "195edd45-2592-4a07-9d14-d22934564e4a";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2731CDD51C193D0400F33067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
+				INFOPLIST_FILE = TopShelfVibes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kirkland.Screenz.TopShelfVibes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "195edd45-2592-4a07-9d14-d22934564e4a";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		27F4EE331BFAC6BB006D34C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -593,6 +717,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Screenz",
@@ -601,7 +726,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kirkland.Screenz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c3616ac9-502d-444c-8034-b724f484169a";
 			};
 			name = Debug;
 		};
@@ -612,6 +737,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Distribution";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Screenz",
@@ -675,6 +801,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2731CDD31C193D0400F33067 /* Build configuration list for PBXNativeTarget "TopShelfVibes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2731CDD41C193D0400F33067 /* Debug */,
+				2731CDD51C193D0400F33067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		27F4EE0B1BFAC6BB006D34C2 /* Build configuration list for PBXProject "Screenz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -392,16 +392,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="santaClose" translatesAutoresizingMaskIntoConstraints="NO" id="aNW-r0-a9m">
-                                                            <rect key="frame" x="0.0" y="85" width="130" height="85"/>
-                                                            <animations/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeFire" translatesAutoresizingMaskIntoConstraints="NO" id="NyH-Rh-7XZ">
-                                                            <rect key="frame" x="130" y="85" width="130" height="85"/>
-                                                            <animations/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="candlesWide" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6FO-0Q-m08">
-                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="85"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square-new" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6FO-0Q-m08">
+                                                            <rect key="frame" x="0.0" y="0.0" width="260" height="170"/>
                                                             <animations/>
                                                         </imageView>
                                                     </subviews>
@@ -410,16 +402,8 @@
                                                 </view>
                                                 <animations/>
                                                 <constraints>
-                                                    <constraint firstItem="6FO-0Q-m08" firstAttribute="height" secondItem="M5N-ZV-I5l" secondAttribute="height" multiplier="0.5" id="0Kc-n0-IUw"/>
-                                                    <constraint firstItem="NyH-Rh-7XZ" firstAttribute="centerY" secondItem="aNW-r0-a9m" secondAttribute="centerY" id="2ga-Kh-Ft3"/>
-                                                    <constraint firstItem="NyH-Rh-7XZ" firstAttribute="width" secondItem="aNW-r0-a9m" secondAttribute="width" id="3TO-ab-xIk"/>
+                                                    <constraint firstItem="6FO-0Q-m08" firstAttribute="height" secondItem="M5N-ZV-I5l" secondAttribute="height" id="0Kc-n0-IUw"/>
                                                     <constraint firstItem="6FO-0Q-m08" firstAttribute="leading" secondItem="M5N-ZV-I5l" secondAttribute="leading" id="495-xu-pRA"/>
-                                                    <constraint firstAttribute="bottom" secondItem="aNW-r0-a9m" secondAttribute="bottom" id="9wv-n8-3xc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="NyH-Rh-7XZ" secondAttribute="trailing" id="Kay-iU-rM8"/>
-                                                    <constraint firstItem="NyH-Rh-7XZ" firstAttribute="height" secondItem="aNW-r0-a9m" secondAttribute="height" id="QW4-lI-tpD"/>
-                                                    <constraint firstItem="aNW-r0-a9m" firstAttribute="width" secondItem="6FO-0Q-m08" secondAttribute="width" multiplier="0.5" id="Qtq-Oj-ird"/>
-                                                    <constraint firstItem="aNW-r0-a9m" firstAttribute="leading" secondItem="M5N-ZV-I5l" secondAttribute="leading" id="bzX-tG-Yjl"/>
-                                                    <constraint firstItem="aNW-r0-a9m" firstAttribute="top" secondItem="6FO-0Q-m08" secondAttribute="bottom" id="iCm-Hp-svN"/>
                                                     <constraint firstItem="6FO-0Q-m08" firstAttribute="top" secondItem="M5N-ZV-I5l" secondAttribute="top" id="kgk-gH-pLl"/>
                                                     <constraint firstAttribute="trailing" secondItem="6FO-0Q-m08" secondAttribute="trailing" id="uc9-tq-jeo"/>
                                                 </constraints>
@@ -519,10 +503,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="candlesWide" width="260" height="85"/>
-        <image name="closeFire" width="130" height="85"/>
         <image name="images" width="142" height="88"/>
-        <image name="santaClose" width="130" height="85"/>
+        <image name="square-new" width="260" height="170"/>
         <image name="title" width="400" height="240"/>
         <image name="treesBackdrop" width="400" height="240"/>
     </resources>

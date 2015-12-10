@@ -77,19 +77,19 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         
         var indexPath: NSIndexPath!
         print("favePizza:\(favePizza)")
-        if favePizza.containsString("Test1") == true {
-            indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        } else if favePizza.containsString("Test2") == true {
+        if favePizza.containsString("firewide") == true {
             indexPath = NSIndexPath(forRow: 1, inSection: 0)
-
-        }else if favePizza.containsString("Test3") == true {
+        } else if favePizza.containsString("snowman") == true {
             indexPath = NSIndexPath(forRow: 2, inSection: 0)
-            
-        }else if favePizza.containsString("Test4") == true {
+
+        }else if favePizza.containsString("close") == true {
             indexPath = NSIndexPath(forRow: 3, inSection: 0)
             
-        }else if favePizza.containsString("Test5") == true {
+        }else if favePizza.containsString("candles") == true {
             indexPath = NSIndexPath(forRow: 4, inSection: 0)
+            
+        }else if favePizza.containsString("santa") == true {
+            indexPath = NSIndexPath(forRow: 5, inSection: 0)
             
         }
         
@@ -131,7 +131,7 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         let tAsset = AVURLAsset(URL: url!)
         let tEditRange = CMTimeRangeMake(CMTimeMake(0,1), CMTimeMake(tAsset.duration.value, tAsset.duration.timescale))
         let tComposition = AVMutableComposition()
-        for i in 0...2 {
+        for i in 0...10 {
             try! tComposition.insertTimeRange(tEditRange, ofAsset: tAsset, atTime: tComposition.duration)
         }
         
@@ -171,6 +171,12 @@ class ScreenzViewController: UIViewController, IAPContainer, DataStoreOwner {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: self.backgroundPlayer!.currentItem)
         self.newVideo(screen!.url)
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.backgroundPlayer?.pause()
     }
     
     override func viewDidAppear(animated: Bool) {

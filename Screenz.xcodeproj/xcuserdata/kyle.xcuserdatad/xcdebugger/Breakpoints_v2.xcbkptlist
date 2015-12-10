@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
+            timestampString = "471417782.424583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "didTapBuyButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
+            timestampString = "471417782.424583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "didTapPreviewButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
+            timestampString = "471417782.424583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "didTapBuyButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
+            timestampString = "471417782.424583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "handlePurchaseNotification(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -474,7 +474,7 @@
                   moduleName = "Screenz"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kyle/development/ios/Screenz/Screenz/ApiService.swift"
-                  timestampString = "471403438.405506"
+                  timestampString = "471417926.659183"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "111"
@@ -489,7 +489,7 @@
                   moduleName = "Screenz"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kyle/development/ios/Screenz/Screenz/ApiService.swift"
-                  timestampString = "471403438.405781"
+                  timestampString = "471417926.659482"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "112"
@@ -778,11 +778,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
+            timestampString = "471417782.424583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "handlePurchaseNotification(_:)"
             landmarkType = "5">
             <Locations>
@@ -826,23 +826,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "handlePurchaseNotification(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
+            timestampString = "471417782.424583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "243"
@@ -858,12 +842,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Screenz/ScreenzViewController.swift"
-            timestampString = "471407154.727699"
+            timestampString = "471417782.424583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "handlePurchaseNotification(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Screenz/ScreenzViewController.swift"
+            timestampString = "471417782.424583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
+            landmarkName = "handlePurchaseNotification(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Screenz/ScreenzViewController.swift"
+            timestampString = "471417922.079327"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

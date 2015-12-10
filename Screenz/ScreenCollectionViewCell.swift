@@ -23,11 +23,11 @@ class ScreenCollectionViewCell: UICollectionViewCell {
     }
     
     func restorePurchasesState() {
-        self.restorePurchasesLabel.hidden = false
+       // self.restorePurchasesLabel.hidden = false
         self.backgroundColor = UIColor.blackColor()
         self.contentView.backgroundColor = UIColor.darkGrayColor()
-        self.thumbnailImage!.image =  UIImage(named: "treesBackdrop")
-        self.bringSubviewToFront(self.restorePurchasesLabel)
+        self.thumbnailImage!.image =  UIImage(named: "square-restore")
+        //self.bringSubviewToFront(self.restorePurchasesLabel)
     }
     
 }

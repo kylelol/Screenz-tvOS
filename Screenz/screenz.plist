@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>description</key>
-		<string>This is a bundle of 3 videos for the price of one. Buy it today!</string>
+		<string>This is a bundle of 3 videos total. Includes &quot;A Little Closer&quot;, &quot;Candle Trifecta&quot;, and &quot;Santa Says Hey&quot; for the low price of $1.99!</string>
 		<key>purchaseId</key>
 		<string>com.Kirkland.Screenz.3Bundle</string>
 		<key>title</key>
